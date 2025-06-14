@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, User, Plane, ArrowRight, Shield, TrendingUp, MapPin } from "lucide-react";
@@ -14,10 +13,13 @@ const ServiceCards = () => {
         "Financial Modeling & Analysis", 
         "Process Automation",
         "Cost Optimization Initiatives",
-        "Compliance & Risk Management"
+        "Setting up Companies in UAE",
+        "Bookkeeping Services",
+        "Virtual CFO Services",
+        "Ecommerce Support Services"
       ],
       color: "from-blue-600 to-blue-700",
-      ctaText: "Boost Your Business",
+      ctaText: "Get Free Business Consultation",
       image: "photo-1488590528505-98d2b5aba04b"
     },
     {
@@ -27,12 +29,14 @@ const ServiceCards = () => {
       features: [
         "Financial Planning & Budgeting",
         "Investment Portfolio Management",
+        "Investment Guide in UAE",
+        "Investment in Indian Equity Market",
         "Retirement Planning",
         "Personal Insurance Advisory",
         "Wealth Building Strategies"
       ],
       color: "from-green-600 to-green-700",
-      ctaText: "Secure Your Future",
+      ctaText: "Start Your Financial Plan",
       image: "photo-1649972904349-6e44c42644a7"
     },
     {
@@ -47,7 +51,7 @@ const ServiceCards = () => {
         "Customized Itineraries"
       ],
       color: "from-purple-600 to-purple-700",
-      ctaText: "Plan Your Journey",
+      ctaText: "Plan Your Dream Trip",
       image: "photo-1470071459604-3b5ec3a7fe05"
     }
   ];
