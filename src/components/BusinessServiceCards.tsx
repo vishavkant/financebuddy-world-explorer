@@ -1,117 +1,71 @@
-
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, ArrowRight, Calculator, FileText, Users, TrendingUp } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Shield, TrendingUp, Lightbulb, BarChart, User, Lock } from "lucide-react";
 
 const BusinessServiceCards = () => {
-  const businessServices = [
+  const services = [
     {
-      title: "Company Setup & Registration",
-      description: "Complete UAE company formation services",
-      icon: Building2,
-      features: [
-        "UAE Company Setup",
-        "Business License Processing",
-        "Legal Documentation",
-        "Compliance Management"
-      ],
-      color: "from-blue-600 to-blue-700"
-    },
-    {
-      title: "Financial Services",
-      description: "Comprehensive financial management solutions",
-      icon: Calculator,
-      features: [
-        "Financial Modeling & Analysis",
-        "Virtual CFO Services",
-        "Cost Optimization",
-        "Financial Planning"
-      ],
-      color: "from-green-600 to-green-700"
-    },
-    {
-      title: "Bookkeeping & Accounting",
-      description: "Professional accounting and record maintenance",
-      icon: FileText,
-      features: [
-        "Monthly Bookkeeping",
-        "VAT Registration & Filing",
-        "Financial Reporting",
-        "Audit Preparation"
-      ],
-      color: "from-purple-600 to-purple-700"
-    },
-    {
+      icon: Shield,
       title: "Business Insurance",
-      description: "Protect your business with comprehensive coverage",
-      icon: Users,
-      features: [
-        "General Business Insurance",
-        "Professional Indemnity",
-        "Employee Benefits",
-        "Commercial Property Insurance"
-      ],
-      color: "from-orange-600 to-orange-700"
+      description: "Comprehensive insurance solutions to protect your business assets and operations",
+      features: ["General Liability", "Professional Indemnity", "Medical Insurance", "Property Insurance"]
+    },
+    {
+      icon: TrendingUp,
+      title: "Financial Modeling",
+      description: "Advanced financial models for forecasting, budgeting, and strategic decision-making",
+      features: ["Scenario Analysis", "Budgeting & Forecasting", "Investment Analysis", "Valuation Services"]
+    },
+    {
+      icon: Lightbulb,
+      title: "Process Automation",
+      description: "Automate repetitive tasks to improve efficiency and reduce operational costs",
+      features: ["Workflow Automation", "RPA Implementation", "Custom Software Solutions", "Data Integration"]
+    },
+    {
+      icon: BarChart,
+      title: "Cost Optimization",
+      description: "Identify and implement strategies to reduce costs and improve profitability",
+      features: ["Expense Reduction", "Supply Chain Optimization", "Energy Efficiency", "Tax Planning"]
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Your Business Growth Partner
+    <section className="py-20 bg-gray-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+            Empowering Your Business Growth
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Focus on your core business while we handle your non-core financial tasks
+          <p className="text-gray-600 mt-4">
+            Explore our comprehensive suite of business solutions designed to
+            drive efficiency, reduce costs, and maximize profitability.
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {businessServices.map((service, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden">
-              <div className={`h-32 bg-gradient-to-br ${service.color} relative flex items-center justify-center`}>
-                <service.icon className="w-12 h-12 text-white" />
-              </div>
-              
-              <CardHeader className="pb-4">
-                <CardTitle className="text-2xl font-bold text-gray-900">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mx-auto mb-4">
+                  <service.icon className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 text-center mb-2">
                   {service.title}
-                </CardTitle>
-                <CardDescription className="text-gray-600 text-base">
+                </h3>
+                <p className="text-gray-600 text-center mb-4">
                   {service.description}
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="space-y-4">
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                </p>
+                <ul className="list-disc list-inside text-sm text-gray-600">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="mb-1">
                       {feature}
                     </li>
                   ))}
                 </ul>
-                
-                <Button className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
-                  Get Started
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link to="/blog/business">
-            <Button variant="outline" className="mr-4">
-              Read Business Blog
-            </Button>
-          </Link>
-          <Button className="bg-gradient-to-r from-blue-600 to-blue-700">
-            Free Business Consultation
-          </Button>
         </div>
       </div>
     </section>

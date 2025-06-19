@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -52,7 +51,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold">Phone</div>
-                  <div className="text-gray-300">+971 XXX XXXX</div>
+                  <div className="text-gray-300">+971561144627</div>
                 </div>
               </div>
               
