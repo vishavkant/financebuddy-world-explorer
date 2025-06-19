@@ -44,6 +44,13 @@ const Hero = ({ userType }: HeroProps) => {
     ];
   };
 
+  const scrollToServices = () => {
+    const element = document.querySelector('#services');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 px-4">
       <div className="absolute inset-0 bg-black/20"></div>
@@ -71,7 +78,12 @@ const Hero = ({ userType }: HeroProps) => {
             Get Free Consultation
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 font-semibold py-4 px-8 rounded-full transition-all duration-300">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            onClick={scrollToServices}
+            className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-900 font-semibold py-4 px-8 rounded-full transition-all duration-300"
+          >
             Learn More
           </Button>
         </div>
