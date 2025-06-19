@@ -11,7 +11,11 @@ import {
 import { Building2, User, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Navigation = () => {
+interface NavigationProps {
+  userType?: 'personal' | 'business';
+}
+
+const Navigation = ({ userType }: NavigationProps) => {
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

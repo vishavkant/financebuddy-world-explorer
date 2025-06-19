@@ -1,34 +1,69 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, TrendingUp, Plane } from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, Building2, User, Calculator } from "lucide-react";
 
-const Hero = () => {
+interface HeroProps {
+  userType?: 'personal' | 'business';
+}
+
+const Hero = ({ userType }: HeroProps) => {
+  const isPersonal = userType === 'personal';
+  const isBusiness = userType === 'business';
+
+  const getTitle = () => {
+    if (isPersonal) return "Personal Finance & Mortgage Solutions";
+    if (isBusiness) return "Business Solutions & Growth";
+    return "FinanceBuddy";
+  };
+
+  const getSubtitle = () => {
+    if (isPersonal) return "Expert guidance for personal finance management, mortgage solutions, and investment planning";
+    if (isBusiness) return "Comprehensive business setup, bookkeeping, and growth optimization services";
+    return "Your comprehensive partner for Business Solutions, Personal Finance, and Mortgage Planning";
+  };
+
+  const getFeatures = () => {
+    if (isPersonal) {
+      return [
+        { icon: Calculator, text: "Mortgage Solutions", color: "text-green-400" },
+        { icon: Shield, text: "Financial Security", color: "text-blue-400" },
+        { icon: TrendingUp, text: "Investment Planning", color: "text-purple-400" }
+      ];
+    }
+    if (isBusiness) {
+      return [
+        { icon: Building2, text: "Business Setup", color: "text-green-400" },
+        { icon: TrendingUp, text: "Growth Optimization", color: "text-blue-400" },
+        { icon: Shield, text: "Financial Management", color: "text-purple-400" }
+      ];
+    }
+    return [
+      { icon: TrendingUp, text: "Business Growth", color: "text-green-400" },
+      { icon: Shield, text: "Financial Security", color: "text-blue-400" },
+      { icon: Calculator, text: "Mortgage Planning", color: "text-purple-400" }
+    ];
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 px-4">
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="relative max-w-6xl mx-auto text-center">
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-            FinanceBuddy
+            {getTitle()}
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Your comprehensive partner for Business Solutions, Personal Finance, and Travel Planning
+            {getSubtitle()}
           </p>
         </div>
         
         <div className="flex flex-wrap justify-center gap-6 mb-12">
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-            <TrendingUp className="w-5 h-5 text-green-400" />
-            <span className="font-medium">Business Growth</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-            <Shield className="w-5 h-5 text-blue-400" />
-            <span className="font-medium">Financial Security</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-            <Plane className="w-5 h-5 text-purple-400" />
-            <span className="font-medium">Travel Planning</span>
-          </div>
+          {getFeatures().map((feature, index) => (
+            <div key={index} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
+              <feature.icon className={`w-5 h-5 ${feature.color}`} />
+              <span className="font-medium">{feature.text}</span>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
