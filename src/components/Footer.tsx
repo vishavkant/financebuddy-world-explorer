@@ -1,5 +1,5 @@
 
-import { Building2, User, Plane, Mail, Phone, MapPin } from "lucide-react";
+import { Building2, User, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
               FinanceBuddy
             </h3>
             <p className="text-gray-300 mb-4">
-              Your comprehensive partner for business growth, financial security, and world exploration.
+              Your comprehensive partner for business growth and personal finance management.
             </p>
             <div className="flex gap-2">
               <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
@@ -19,9 +19,6 @@ const Footer = () => {
               </div>
               <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
                 <User className="w-4 h-4" />
-              </div>
-              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
-                <Plane className="w-4 h-4" />
               </div>
             </div>
           </div>
@@ -37,12 +34,12 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4">Personal & Travel</h4>
+            <h4 className="font-bold mb-4">Personal Finance</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">Financial Planning</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Investment Advisory</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">UAE Tourism</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">International Travel</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Mortgage Solutions</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Investment Planning</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Financial Advisory</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Wealth Management</a></li>
             </ul>
           </div>
 
@@ -66,7 +63,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 FinanceBuddy. All rights reserved. | Empowering your financial and travel journey.</p>
+          <p>&copy; 2024 FinanceBuddy. All rights reserved. | Empowering your business and financial journey.</p>
         </div>
       </div>
     </footer>
