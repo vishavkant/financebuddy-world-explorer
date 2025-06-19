@@ -1,22 +1,8 @@
 
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import ServiceCards from "@/components/ServiceCards";
-import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import SmartRouter from "@/components/SmartRouter";
 
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      <Hero />
-      <ServiceCards />
-      <AboutSection />
-      <ContactSection />
-      <Footer />
-    </div>
-  );
+  return <SmartRouter />;
 };
 
 export default Index;
