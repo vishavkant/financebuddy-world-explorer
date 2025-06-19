@@ -7,17 +7,33 @@ import { Link } from "react-router-dom";
 const BlogFinance = () => {
   const financePosts = [
     {
+      title: "Mortgage Planning Guide for UAE Residents",
+      excerpt: "Complete guide to mortgage planning, home loans, and property financing in the UAE.",
+      date: "December 15, 2024",
+      readTime: "10 min read",
+      author: "Ahmed Al-Rashid",
+      category: "Mortgage Planning"
+    },
+    {
+      title: "Home Loan Structuring: Optimize Your Mortgage",
+      excerpt: "Advanced strategies for structuring your home loan to minimize costs and maximize benefits.",
+      date: "December 12, 2024",
+      readTime: "8 min read",
+      author: "Raj Patel",
+      category: "Home Loans"
+    },
+    {
       title: "Investment Opportunities in UAE vs Indian Equity Markets",
       excerpt: "Comprehensive comparison of investment landscapes in UAE and India, helping you make informed decisions.",
-      date: "December 12, 2024",
+      date: "December 8, 2024",
       readTime: "9 min read",
-      author: "Raj Patel",
+      author: "Priya Sharma",
       category: "Investment Guide"
     },
     {
       title: "Building Wealth in UAE: A Complete Guide for Expats",
       excerpt: "Strategic wealth building approaches tailored for expatriates living and working in the UAE.",
-      date: "December 8, 2024",
+      date: "December 3, 2024",
       readTime: "11 min read",
       author: "Amina Hassan",
       category: "Wealth Building"
@@ -25,7 +41,7 @@ const BlogFinance = () => {
     {
       title: "Retirement Planning in UAE: Tax-Free Benefits and Strategies",
       excerpt: "How to leverage UAE's tax-free environment for optimal retirement planning and savings.",
-      date: "December 3, 2024",
+      date: "November 25, 2024",
       readTime: "8 min read",
       author: "John Miller",
       category: "Retirement Planning"
@@ -33,26 +49,10 @@ const BlogFinance = () => {
     {
       title: "Personal Insurance Guide for UAE Residents",
       excerpt: "Essential insurance coverage every UAE resident should consider for comprehensive financial protection.",
-      date: "November 25, 2024",
-      readTime: "6 min read",
-      author: "Fatima Al-Rashid",
-      category: "Insurance"
-    },
-    {
-      title: "Investment Portfolio Diversification: UAE Edition",
-      excerpt: "Smart diversification strategies for building a robust investment portfolio while living in UAE.",
       date: "November 18, 2024",
-      readTime: "10 min read",
-      author: "Ahmed Al-Mansoori",
-      category: "Portfolio Management"
-    },
-    {
-      title: "Financial Planning for Young Professionals in UAE",
-      excerpt: "Essential financial planning steps for young professionals starting their careers in the UAE.",
-      date: "November 10, 2024",
-      readTime: "7 min read",
-      author: "Sarah Thompson",
-      category: "Financial Planning"
+      readTime: "6 min read",
+      author: "Fatima Al-Zahra",
+      category: "Insurance"
     }
   ];
 
@@ -74,8 +74,8 @@ const BlogFinance = () => {
               <User className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-gray-900">Personal Finance Blog</h1>
-              <p className="text-gray-600 mt-2">Investment strategies and financial planning for UAE residents</p>
+              <h1 className="text-4xl font-bold text-gray-900">Personal Finance & Mortgage Blog</h1>
+              <p className="text-gray-600 mt-2">Investment strategies, mortgage solutions, and financial planning for UAE residents</p>
             </div>
           </div>
         </div>

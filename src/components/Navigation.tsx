@@ -8,7 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Building2, User, Plane, BookOpen } from "lucide-react";
+import { Building2, User, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -28,7 +28,7 @@ const Navigation = () => {
                 <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                    <div className="row-span-3">
+                    <div className="row-span-2">
                       <NavigationMenuLink asChild>
                         <Link
                           className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-600 to-purple-600 p-6 no-underline outline-none focus:shadow-md"
@@ -38,7 +38,7 @@ const Navigation = () => {
                             FinanceBuddy
                           </div>
                           <p className="text-sm leading-tight text-white/90">
-                            Your comprehensive partner for business, finance, and travel
+                            Your comprehensive partner for business and personal finance
                           </p>
                         </Link>
                       </NavigationMenuLink>
@@ -50,11 +50,7 @@ const Navigation = () => {
                       </div>
                       <div className="flex items-center gap-2 text-sm font-medium">
                         <User className="w-4 h-4" />
-                        Personal Finance
-                      </div>
-                      <div className="flex items-center gap-2 text-sm font-medium">
-                        <Plane className="w-4 h-4" />
-                        Travel Planning
+                        Personal Finance & Mortgage
                       </div>
                     </div>
                   </div>
@@ -64,7 +60,7 @@ const Navigation = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Blog</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <div className="grid gap-3 p-4 md:w-[400px] md:grid-cols-1 lg:w-[500px]">
                     <NavigationMenuLink asChild>
                       <Link
                         to="/blog"
@@ -100,24 +96,10 @@ const Navigation = () => {
                       >
                         <div className="flex items-center gap-2 text-sm font-medium leading-none">
                           <User className="w-4 h-4" />
-                          Personal Finance
+                          Personal Finance & Mortgage
                         </div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Investment guides and financial planning strategies
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        to="/blog/travel"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="flex items-center gap-2 text-sm font-medium leading-none">
-                          <Plane className="w-4 h-4" />
-                          Travel Planning
-                        </div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Travel guides and destination planning tips
+                          Investment guides, mortgage solutions, and financial planning
                         </p>
                       </Link>
                     </NavigationMenuLink>

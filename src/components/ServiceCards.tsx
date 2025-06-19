@@ -1,6 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, User, Plane, ArrowRight, Shield, TrendingUp, MapPin } from "lucide-react";
+import { Building2, User, ArrowRight } from "lucide-react";
 
 const ServiceCards = () => {
   const services = [
@@ -23,36 +24,22 @@ const ServiceCards = () => {
       image: "photo-1488590528505-98d2b5aba04b"
     },
     {
-      title: "Personal Finance",
-      description: "Secure your financial future with personalized planning and investment strategies",
+      title: "Personal Finance & Mortgage",
+      description: "Secure your financial future with personalized planning and mortgage solutions",
       icon: User,
       features: [
+        "Mortgage Advisory & Planning",
+        "Home Loan Structuring",
         "Financial Planning & Budgeting",
         "Investment Portfolio Management",
         "Investment Guide in UAE",
         "Investment in Indian Equity Market",
         "Retirement Planning",
-        "Personal Insurance Advisory",
-        "Wealth Building Strategies"
+        "Personal Insurance Advisory"
       ],
       color: "from-green-600 to-green-700",
       ctaText: "Start Your Financial Plan",
       image: "photo-1649972904349-6e44c42644a7"
-    },
-    {
-      title: "Travel Planning",
-      description: "Explore the world with expertly crafted travel experiences",
-      icon: Plane,
-      features: [
-        "UAE Tourism & Local Experiences",
-        "International Travel Planning",
-        "Corporate Travel Solutions",
-        "Visa & Documentation Support",
-        "Customized Itineraries"
-      ],
-      color: "from-purple-600 to-purple-700",
-      ctaText: "Plan Your Dream Trip",
-      image: "photo-1470071459604-3b5ec3a7fe05"
     }
   ];
 
@@ -61,14 +48,14 @@ const ServiceCards = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Your All-in-One Financial & Travel Companion
+            Your Trusted Financial & Business Partner
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From business optimization to personal wealth building and world exploration - we've got you covered
+            From business optimization to personal wealth building and mortgage solutions - we've got you covered
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden">
               <div className={`h-48 bg-gradient-to-br ${service.color} relative`}>

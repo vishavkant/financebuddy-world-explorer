@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, User, Plane, ArrowRight, Calendar, Clock } from "lucide-react";
+import { Building2, User, ArrowRight, Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
@@ -16,22 +16,13 @@ const Blog = () => {
       latestPost: "Complete Guide to Setting Up Your Company in UAE"
     },
     {
-      title: "Personal Finance Blog",
-      description: "Investment strategies, financial planning, and wealth building tips for UAE residents",
+      title: "Personal Finance & Mortgage Blog",
+      description: "Investment strategies, mortgage solutions, and financial planning tips for UAE residents",
       icon: User,
       color: "from-green-600 to-green-700",
       path: "/blog/finance",
       postCount: 18,
-      latestPost: "Investment Opportunities in UAE vs Indian Equity Markets"
-    },
-    {
-      title: "Travel Planning Blog",
-      description: "Travel guides, destination insights, and planning tips for UAE and international travel",
-      icon: Plane,
-      color: "from-purple-600 to-purple-700",
-      path: "/blog/travel",
-      postCount: 15,
-      latestPost: "Hidden Gems in UAE: A Local's Travel Guide"
+      latestPost: "Mortgage Planning Guide for UAE Residents"
     }
   ];
 
@@ -44,11 +35,11 @@ const Blog = () => {
               FinanceBuddy <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Blog</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Expert insights, tips, and guides across Business Solutions, Personal Finance, and Travel Planning
+              Expert insights, tips, and guides across Business Solutions and Personal Finance & Mortgage
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {blogVerticals.map((vertical, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden">
                 <div className={`h-32 bg-gradient-to-br ${vertical.color} relative flex items-center justify-center`}>
