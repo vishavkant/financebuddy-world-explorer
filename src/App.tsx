@@ -24,6 +24,9 @@ import BusinessInsurance from "./pages/services/BusinessInsurance";
 import FinancialModeling from "./pages/services/FinancialModeling";
 import ProcessAutomation from "./pages/services/ProcessAutomation";
 import CostOptimization from "./pages/services/CostOptimization";
+import CompanySetup from "./pages/services/CompanySetup";
+import Bookkeeping from "./pages/services/Bookkeeping";
+import ECommerceSetup from "./pages/services/ECommerceSetup";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +53,9 @@ const AppContent = () => {
       <Route path="/services/financial-modeling" element={<FinancialModeling />} />
       <Route path="/services/process-automation" element={<ProcessAutomation />} />
       <Route path="/services/cost-optimization" element={<CostOptimization />} />
+      <Route path="/services/company-setup" element={<CompanySetup />} />
+      <Route path="/services/bookkeeping" element={<Bookkeeping />} />
+      <Route path="/services/ecommerce-setup" element={<ECommerceSetup />} />
       
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />

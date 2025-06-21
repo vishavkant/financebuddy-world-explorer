@@ -3,6 +3,10 @@ import { Building2, User, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12 px-4">
       <div className="max-w-6xl mx-auto">
@@ -27,20 +31,23 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Business Solutions</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><Link to="/services/business-insurance" className="hover:text-white transition-colors">Business Insurance</Link></li>
-              <li><Link to="/services/financial-modeling" className="hover:text-white transition-colors">Financial Modeling</Link></li>
-              <li><Link to="/services/process-automation" className="hover:text-white transition-colors">Process Automation</Link></li>
-              <li><Link to="/services/cost-optimization" className="hover:text-white transition-colors">Cost Optimization</Link></li>
+              <li><Link to="/services/business-insurance" onClick={scrollToTop} className="hover:text-white transition-colors">Business Insurance</Link></li>
+              <li><Link to="/services/financial-modeling" onClick={scrollToTop} className="hover:text-white transition-colors">Financial Modeling</Link></li>
+              <li><Link to="/services/process-automation" onClick={scrollToTop} className="hover:text-white transition-colors">Process Automation</Link></li>
+              <li><Link to="/services/cost-optimization" onClick={scrollToTop} className="hover:text-white transition-colors">Cost Optimization</Link></li>
+              <li><Link to="/services/company-setup" onClick={scrollToTop} className="hover:text-white transition-colors">Company Setup</Link></li>
+              <li><Link to="/services/bookkeeping" onClick={scrollToTop} className="hover:text-white transition-colors">Bookkeeping</Link></li>
+              <li><Link to="/services/ecommerce-setup" onClick={scrollToTop} className="hover:text-white transition-colors">E-Commerce Setup</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4">Personal Finance</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><Link to="/services/mortgage-loans" className="hover:text-white transition-colors">Mortgage & Home Loans</Link></li>
-              <li><Link to="/services/investment-planning" className="hover:text-white transition-colors">Investment Planning</Link></li>
-              <li><Link to="/services/personal-insurance" className="hover:text-white transition-colors">Personal Insurance</Link></li>
-              <li><Link to="/services/financial-planning" className="hover:text-white transition-colors">Financial Planning</Link></li>
+              <li><Link to="/services/mortgage-loans" onClick={scrollToTop} className="hover:text-white transition-colors">Mortgage & Home Loans</Link></li>
+              <li><Link to="/services/investment-planning" onClick={scrollToTop} className="hover:text-white transition-colors">Investment Planning</Link></li>
+              <li><Link to="/services/personal-insurance" onClick={scrollToTop} className="hover:text-white transition-colors">Personal Insurance</Link></li>
+              <li><Link to="/services/financial-planning" onClick={scrollToTop} className="hover:text-white transition-colors">Financial Planning</Link></li>
             </ul>
           </div>
 

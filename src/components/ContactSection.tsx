@@ -1,143 +1,159 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
-const ContactSection = () => {
+interface ContactSectionProps {
+  selectedService?: string;
+}
+
+const ContactSection = ({ selectedService }: ContactSectionProps) => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    service: "",
-    message: ""
+    name: '',
+    email: '',
+    phone: '',
+    service: selectedService || '',
+    message: ''
   });
-  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+    console.log('Contact form submitted:', formData);
+    // Here you can add your form submission logic
+    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: selectedService || '',
+      message: ''
     });
-    setFormData({ name: "", email: "", service: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
   };
 
   return (
-    <section className="py-20 px-4 bg-gray-900 text-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Let's discuss how FinanceBuddy can help you achieve your goals
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-gray-600">
+            Ready to take the next step? Contact us today for a consultation.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="font-semibold">Phone</div>
-                  <div className="text-gray-300">+971561144627</div>
-                </div>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <Input
+                  type="text"
+                  name="name"
+                  placeholder="Your Full Name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full"
+                />
               </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="font-semibold">Email</div>
-                  <div className="text-gray-300">hello@thefinancebuddy.com</div>
-                </div>
+              <div>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email Address"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full"
+                />
               </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="font-semibold">Location</div>
-                  <div className="text-gray-300">Dubai, UAE</div>
-                </div>
+              <div>
+                <Input
+                  type="tel"
+                  name="phone"
+                  placeholder="Your Phone Number"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full"
+                />
               </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-xl border border-blue-500/30">
-              <h4 className="font-bold mb-2">Free Consultation Available!</h4>
-              <p className="text-gray-300 text-sm">
-                Book a 30-minute consultation to discuss your specific needs and see how we can help.
-              </p>
-            </div>
+              <div>
+                <Input
+                  type="text"
+                  name="service"
+                  placeholder="Service of Interest"
+                  value={formData.service}
+                  onChange={handleInputChange}
+                  className="w-full"
+                />
+              </div>
+              <div>
+                <Textarea
+                  name="message"
+                  placeholder="Tell us about your requirements..."
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              >
+                Send Message
+              </Button>
+            </form>
           </div>
 
-          <Card className="bg-white text-gray-900">
-            <CardHeader>
-              <CardTitle className="text-2xl">Send us a Message</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input
-                    placeholder="Your Name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                  <Input
-                    type="email"
-                    placeholder="Your Email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
+          <div>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <Mail className="w-6 h-6 text-blue-600 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-gray-800">Email</h4>
+                  <p className="text-gray-600">hello@thefinancebuddy.com</p>
                 </div>
-                
-                <select 
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required
-                >
-                  <option value="">Select Service Interest</option>
-                  <option value="business">Business Solutions</option>
-                  <option value="personal">Personal Finance</option>
-                  <option value="travel">Travel Planning</option>
-                  <option value="all">All Services</option>
-                </select>
+              </div>
+              <div className="flex items-start gap-4">
+                <Phone className="w-6 h-6 text-blue-600 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-gray-800">Phone</h4>
+                  <p className="text-gray-600">+971561144627</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <MapPin className="w-6 h-6 text-blue-600 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-gray-800">Location</h4>
+                  <p className="text-gray-600">Dubai, UAE</p>
+                </div>
+              </div>
+            </div>
 
-                <Textarea
-                  placeholder="Tell us about your needs..."
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  required
-                />
-
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 py-3">
-                  Send Message
-                  <Send className="ml-2 w-4 h-4" />
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+            <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+              <h4 className="font-semibold text-gray-800 mb-2">Business Hours</h4>
+              <div className="space-y-1 text-gray-600">
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: 9:00 AM - 2:00 PM</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

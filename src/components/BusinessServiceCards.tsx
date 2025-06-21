@@ -1,5 +1,5 @@
 
-import { Shield, TrendingUp, Lightbulb, BarChart } from "lucide-react";
+import { Shield, TrendingUp, Lightbulb, BarChart, Building, Calculator, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -27,7 +27,7 @@ const BusinessServiceCards = () => {
       icon: Lightbulb,
       title: "Process Automation",
       description: "Automate repetitive tasks to improve efficiency and reduce operational costs",
-      features: ["Workflow Automation", "RPA Implementation", "Custom Software Solutions", "Data Integration"],
+      features: ["Workflow Automation", "Custom Software Solutions", "Data Integration", "Process Re-engineering"],
       color: "from-purple-600 to-purple-700",
       link: "/services/process-automation"
     },
@@ -35,9 +35,33 @@ const BusinessServiceCards = () => {
       icon: BarChart,
       title: "Cost Optimization",
       description: "Identify and implement strategies to reduce costs and improve profitability",
-      features: ["Expense Reduction", "Supply Chain Optimization", "Energy Efficiency", "Tax Planning"],
+      features: ["Expense Reduction", "Supply Chain Optimization", "Energy Efficiency", "Technology Cost Management"],
       color: "from-red-600 to-red-700",
       link: "/services/cost-optimization"
+    },
+    {
+      icon: Building,
+      title: "Company Setup in UAE",
+      description: "Expert guidance for establishing your business in the UAE with complete legal compliance",
+      features: ["Mainland Company Formation", "Free Zone Setup", "Offshore Company Formation", "Branch Office Setup"],
+      color: "from-emerald-600 to-emerald-700",
+      link: "/services/company-setup"
+    },
+    {
+      icon: Calculator,
+      title: "Accounting & Bookkeeping",
+      description: "Professional accounting and bookkeeping services to keep your business compliant",
+      features: ["Monthly Bookkeeping", "Annual Accounting", "Management Reporting", "Payroll Processing"],
+      color: "from-indigo-600 to-indigo-700",
+      link: "/services/bookkeeping"
+    },
+    {
+      icon: ShoppingCart,
+      title: "E-Commerce Setup",
+      description: "Launch your online business with comprehensive e-commerce solutions for the UAE market",
+      features: ["Complete Store Setup", "Mobile App Development", "Payment Integration", "Digital Marketing"],
+      color: "from-cyan-600 to-cyan-700",
+      link: "/services/ecommerce-setup"
     }
   ];
 
@@ -53,7 +77,7 @@ const BusinessServiceCards = () => {
             drive efficiency, reduce costs, and maximize profitability.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden bg-white">
               <div className={`h-32 bg-gradient-to-br ${service.color} relative flex items-center justify-center`}>
