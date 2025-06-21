@@ -1,4 +1,6 @@
+
 import { Building2, User, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -25,20 +27,20 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Business Solutions</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">Insurance Services</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Financial Modeling</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Process Automation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Cost Optimization</a></li>
+              <li><Link to="/services/business-insurance" className="hover:text-white transition-colors">Business Insurance</Link></li>
+              <li><Link to="/services/financial-modeling" className="hover:text-white transition-colors">Financial Modeling</Link></li>
+              <li><Link to="/services/process-automation" className="hover:text-white transition-colors">Process Automation</Link></li>
+              <li><Link to="/services/cost-optimization" className="hover:text-white transition-colors">Cost Optimization</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-4">Personal Finance</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">Mortgage Solutions</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Investment Planning</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Financial Advisory</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Wealth Management</a></li>
+              <li><Link to="/services/mortgage-loans" className="hover:text-white transition-colors">Mortgage & Home Loans</Link></li>
+              <li><Link to="/services/investment-planning" className="hover:text-white transition-colors">Investment Planning</Link></li>
+              <li><Link to="/services/personal-insurance" className="hover:text-white transition-colors">Personal Insurance</Link></li>
+              <li><Link to="/services/financial-planning" className="hover:text-white transition-colors">Financial Planning</Link></li>
             </ul>
           </div>
 

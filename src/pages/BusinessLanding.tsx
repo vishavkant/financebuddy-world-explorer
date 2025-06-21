@@ -5,6 +5,7 @@ import BusinessServiceCards from "@/components/BusinessServiceCards";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingToggle from "@/components/FloatingToggle";
 
 const BusinessLanding = () => {
   // Store user preference
@@ -18,6 +19,7 @@ const BusinessLanding = () => {
       <AboutSection />
       <ContactSection />
       <Footer />
+      <FloatingToggle />
     </div>
   );
 };

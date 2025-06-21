@@ -5,6 +5,7 @@ import PersonalServiceCards from "@/components/PersonalServiceCards";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingToggle from "@/components/FloatingToggle";
 
 const PersonalLanding = () => {
   // Store user preference
@@ -18,6 +19,7 @@ const PersonalLanding = () => {
       <AboutSection />
       <ContactSection />
       <Footer />
+      <FloatingToggle />
     </div>
   );
 };

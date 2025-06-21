@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, ArrowRight, Home, TrendingUp, Shield, PiggyBank } from "lucide-react";
+import { ArrowRight, Home, TrendingUp, Shield, PiggyBank } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PersonalServiceCards = () => {
@@ -12,11 +12,12 @@ const PersonalServiceCards = () => {
       icon: Home,
       features: [
         "Mortgage Advisory & Planning",
-        "Home Loan Structuring",
+        "Home Loan Structuring", 
         "Property Investment Guidance",
         "Refinancing Solutions"
       ],
-      color: "from-green-600 to-green-700"
+      color: "from-green-600 to-green-700",
+      link: "/services/mortgage-loans"
     },
     {
       title: "Investment Planning",
@@ -28,7 +29,8 @@ const PersonalServiceCards = () => {
         "Indian Equity Market Investment",
         "Retirement Planning"
       ],
-      color: "from-blue-600 to-blue-700"
+      color: "from-blue-600 to-blue-700",
+      link: "/services/investment-planning"
     },
     {
       title: "Personal Insurance",
@@ -40,7 +42,8 @@ const PersonalServiceCards = () => {
         "Personal Accident Coverage",
         "Family Protection Plans"
       ],
-      color: "from-purple-600 to-purple-700"
+      color: "from-purple-600 to-purple-700",
+      link: "/services/personal-insurance"
     },
     {
       title: "Financial Planning",
@@ -52,12 +55,13 @@ const PersonalServiceCards = () => {
         "Debt Management",
         "Financial Goal Setting"
       ],
-      color: "from-orange-600 to-orange-700"
+      color: "from-orange-600 to-orange-700",
+      link: "/services/financial-planning"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section id="services" className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -94,10 +98,12 @@ const PersonalServiceCards = () => {
                   ))}
                 </ul>
                 
-                <Button className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
-                  Get Started
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link to={service.link}>
+                  <Button className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
+                    Learn More
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

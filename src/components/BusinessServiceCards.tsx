@@ -1,5 +1,9 @@
 
 import { Shield, TrendingUp, Lightbulb, BarChart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const BusinessServiceCards = () => {
   const services = [
@@ -7,25 +11,33 @@ const BusinessServiceCards = () => {
       icon: Shield,
       title: "Business Insurance",
       description: "Comprehensive insurance solutions to protect your business assets and operations",
-      features: ["General Liability", "Professional Indemnity", "Medical Insurance", "Property Insurance"]
+      features: ["General Liability", "Professional Indemnity", "Medical Insurance", "Property Insurance"],
+      color: "from-blue-600 to-blue-700",
+      link: "/services/business-insurance"
     },
     {
       icon: TrendingUp,
       title: "Financial Modeling",
       description: "Advanced financial models for forecasting, budgeting, and strategic decision-making",
-      features: ["Scenario Analysis", "Budgeting & Forecasting", "Investment Analysis", "Valuation Services"]
+      features: ["Scenario Analysis", "Budgeting & Forecasting", "Investment Analysis", "Valuation Services"],
+      color: "from-green-600 to-green-700",
+      link: "/services/financial-modeling"
     },
     {
       icon: Lightbulb,
       title: "Process Automation",
       description: "Automate repetitive tasks to improve efficiency and reduce operational costs",
-      features: ["Workflow Automation", "RPA Implementation", "Custom Software Solutions", "Data Integration"]
+      features: ["Workflow Automation", "RPA Implementation", "Custom Software Solutions", "Data Integration"],
+      color: "from-purple-600 to-purple-700",
+      link: "/services/process-automation"
     },
     {
       icon: BarChart,
       title: "Cost Optimization",
       description: "Identify and implement strategies to reduce costs and improve profitability",
-      features: ["Expense Reduction", "Supply Chain Optimization", "Energy Efficiency", "Tax Planning"]
+      features: ["Expense Reduction", "Supply Chain Optimization", "Energy Efficiency", "Tax Planning"],
+      color: "from-red-600 to-red-700",
+      link: "/services/cost-optimization"
     }
   ];
 
@@ -43,29 +55,38 @@ const BusinessServiceCards = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="p-6">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mx-auto mb-4">
-                  <service.icon className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 text-center mb-2">
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden bg-white">
+              <div className={`h-32 bg-gradient-to-br ${service.color} relative flex items-center justify-center`}>
+                <service.icon className="w-12 h-12 text-white" />
+              </div>
+              
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl font-bold text-gray-900">
                   {service.title}
-                </h3>
-                <p className="text-gray-600 text-center mb-4">
+                </CardTitle>
+                <CardDescription className="text-gray-600 text-sm">
                   {service.description}
-                </p>
-                <ul className="list-disc list-inside text-sm text-gray-600">
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent className="space-y-4">
+                <ul className="space-y-2">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="mb-1">
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
+                
+                <Link to={service.link}>
+                  <Button className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
+                    Learn More
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
