@@ -202,8 +202,7 @@ const ECommerceSetup = () => {
         </div>
       </section>
 
-      <ContactSection selectedService={selecte
-Service} />
+      <ContactSection selectedService={selectedService} />
       <Footer />
       <FloatingToggle />
     </div>
