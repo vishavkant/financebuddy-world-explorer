@@ -60,6 +60,10 @@ const PersonalServiceCards = () => {
     }
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section id="services" className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -98,7 +102,7 @@ const PersonalServiceCards = () => {
                   ))}
                 </ul>
                 
-                <Link to={service.link}>
+                <Link to={service.link} onClick={scrollToTop}>
                   <Button className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
                     Learn More
                     <ArrowRight className="ml-2 w-4 h-4" />

@@ -44,6 +44,13 @@ const Hero = ({ userType }: HeroProps) => {
     ];
   };
 
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const scrollToServices = () => {
     const element = document.querySelector('#services');
     if (element) {
@@ -74,7 +81,11 @@ const Hero = ({ userType }: HeroProps) => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+          <Button 
+            size="lg" 
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+            onClick={scrollToContact}
+          >
             Get Free Consultation
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>

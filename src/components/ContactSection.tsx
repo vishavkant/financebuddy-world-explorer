@@ -28,10 +28,8 @@ const ContactSection = ({ selectedService }: ContactSectionProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Contact form submitted:', formData);
-    // Here you can add your form submission logic
     alert('Thank you for your message! We will get back to you soon.');
     
-    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -133,7 +131,7 @@ const ContactSection = ({ selectedService }: ContactSectionProps) => {
                 <Phone className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
                   <h4 className="font-semibold text-gray-800">Phone</h4>
-                  <p className="text-gray-600">+971561144627</p>
+                  <p className="text-gray-600">+971507003901</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -142,15 +140,6 @@ const ContactSection = ({ selectedService }: ContactSectionProps) => {
                   <h4 className="font-semibold text-gray-800">Location</h4>
                   <p className="text-gray-600">Dubai, UAE</p>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
-              <h4 className="font-semibold text-gray-800 mb-2">Business Hours</h4>
-              <div className="space-y-1 text-gray-600">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p>Saturday: 9:00 AM - 2:00 PM</p>
-                <p>Sunday: Closed</p>
               </div>
             </div>
           </div>

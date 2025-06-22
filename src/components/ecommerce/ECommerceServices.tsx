@@ -8,7 +8,6 @@ interface ECommerceService {
   features: string[];
   icon: React.ComponentType<any>;
   color: string;
-  deliveryTime: string;
 }
 
 interface ECommerceServicesProps {
@@ -21,9 +20,9 @@ const ECommerceServices = ({ services, onGetStarted }: ECommerceServicesProps) =
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Our E-Commerce Services</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Marketplace Setup Services</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            From concept to launch, we provide everything you need to build a successful online business.
+            From account creation to optimization, we help you establish a strong presence on major UAE marketplaces.
           </p>
         </div>
 
@@ -35,12 +34,6 @@ const ECommerceServices = ({ services, onGetStarted }: ECommerceServicesProps) =
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
               <p className="text-gray-600 mb-6">{service.description}</p>
-              
-              <div className="mb-4">
-                <div className="bg-cyan-50 rounded-lg p-3 mb-4">
-                  <span className="text-cyan-800 font-semibold">Delivery: {service.deliveryTime}</span>
-                </div>
-              </div>
               
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>

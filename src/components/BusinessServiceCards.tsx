@@ -35,7 +35,7 @@ const BusinessServiceCards = () => {
       icon: BarChart,
       title: "Cost Optimization",
       description: "Identify and implement strategies to reduce costs and improve profitability",
-      features: ["Expense Reduction", "Supply Chain Optimization", "Energy Efficiency", "Technology Cost Management"],
+      features: ["Expense Reduction", "Supply Chain Optimization", "POS Commission Savings", "Technology Cost Management"],
       color: "from-red-600 to-red-700",
       link: "/services/cost-optimization"
     },
@@ -51,19 +51,23 @@ const BusinessServiceCards = () => {
       icon: Calculator,
       title: "Accounting & Bookkeeping",
       description: "Professional accounting and bookkeeping services to keep your business compliant",
-      features: ["Monthly Bookkeeping", "Annual Accounting", "Management Reporting", "Payroll Processing"],
+      features: ["Monthly Bookkeeping", "Management Reporting", "Payroll Processing", "VAT Compliance"],
       color: "from-indigo-600 to-indigo-700",
       link: "/services/bookkeeping"
     },
     {
       icon: ShoppingCart,
       title: "E-Commerce Setup",
-      description: "Launch your online business with comprehensive e-commerce solutions for the UAE market",
-      features: ["Complete Store Setup", "Mobile App Development", "Payment Integration", "Digital Marketing"],
+      description: "Launch your online business on major UAE marketplaces like Amazon and Noon",
+      features: ["Amazon Setup", "Noon Integration", "Multi-Marketplace Management", "Digital Marketing"],
       color: "from-cyan-600 to-cyan-700",
       link: "/services/ecommerce-setup"
     }
   ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <section id="services" className="py-20 bg-gray-100">
@@ -103,7 +107,7 @@ const BusinessServiceCards = () => {
                   ))}
                 </ul>
                 
-                <Link to={service.link}>
+                <Link to={service.link} onClick={scrollToTop}>
                   <Button className={`w-full bg-gradient-to-r ${service.color} hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
                     Learn More
                     <ArrowRight className="ml-2 w-4 h-4" />

@@ -12,7 +12,7 @@ interface ECommercePlatformsProps {
 const ECommercePlatforms = ({ platforms }: ECommercePlatformsProps) => {
   return (
     <div className="bg-cyan-50 rounded-2xl p-8 mb-12">
-      <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">E-Commerce Platforms We Work With</h3>
+      <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">UAE Marketplaces We Work With</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {platforms.map((platform, index) => (
           <div key={index} className="bg-white rounded-xl p-6 text-center shadow-md">
