@@ -7,51 +7,57 @@ import { Link } from "react-router-dom";
 const BlogBusiness = () => {
   const businessPosts = [
     {
+      id: "complete-guide-company-setup-uae",
       title: "Complete Guide to Setting Up Your Company in UAE",
       excerpt: "Everything you need to know about establishing your business in the UAE, from choosing the right jurisdiction to obtaining licenses.",
-      date: "December 15, 2024",
+      date: "June 10, 2025",
       readTime: "8 min read",
-      author: "FinanceBuddy Team",
+      author: "Vishavkant Sethi",
       category: "Company Setup"
     },
     {
+      id: "virtual-cfo-services-financial-leadership",
       title: "Virtual CFO Services: When Your Business Needs Financial Leadership",
       excerpt: "Discover how virtual CFO services can provide strategic financial guidance without the cost of a full-time executive.",
-      date: "December 10, 2024",
+      date: "May 22, 2025",
       readTime: "6 min read",
-      author: "Sarah Ahmed",
+      author: "Vishavkant Sethi",
       category: "Financial Management"
     },
     {
+      id: "streamlining-bookkeeping-uae-businesses",
       title: "Streamlining Your Bookkeeping: Best Practices for UAE Businesses",
       excerpt: "Essential bookkeeping practices that will keep your UAE business compliant and financially organized.",
-      date: "December 5, 2024",
+      date: "May 8, 2025",
       readTime: "5 min read",
-      author: "Mohammed Khan",
+      author: "Vishavkant Sethi",
       category: "Bookkeeping"
     },
     {
+      id: "ecommerce-success-uae-setup-scale",
       title: "E-commerce Success in UAE: From Setup to Scale",
       excerpt: "A comprehensive guide to launching and growing your e-commerce business in the UAE market.",
-      date: "November 28, 2024",
+      date: "April 15, 2025",
       readTime: "10 min read",
-      author: "Fatima Al-Zahra",
+      author: "Vishavkant Sethi",
       category: "E-commerce"
     },
     {
+      id: "cost-optimization-strategies-growing-businesses",
       title: "Cost Optimization Strategies for Growing Businesses",
       excerpt: "Proven methods to reduce operational costs while maintaining quality and growth trajectory.",
-      date: "November 20, 2024",
+      date: "March 28, 2025",
       readTime: "7 min read",
-      author: "David Johnson",
+      author: "Vishavkant Sethi",
       category: "Cost Management"
     },
     {
+      id: "financial-modeling-101-business-model",
       title: "Financial Modeling 101: Building Your First Business Model",
       excerpt: "Step-by-step guide to creating financial models that help you make informed business decisions.",
-      date: "November 15, 2024",
+      date: "February 18, 2025",
       readTime: "12 min read",
-      author: "Lisa Chen",
+      author: "Vishavkant Sethi",
       category: "Financial Analysis"
     }
   ];
@@ -110,10 +116,12 @@ const BlogBusiness = () => {
                   </span>
                   <span>{post.readTime}</span>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 group-hover:shadow-md transition-all">
-                  Read Article
-                  <ExternalLink className="ml-2 w-4 h-4" />
-                </Button>
+                <Link to={`/blog/business/${post.id}`}>
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 group-hover:shadow-md transition-all">
+                    Read Article
+                    <ExternalLink className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

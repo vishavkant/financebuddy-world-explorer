@@ -7,51 +7,57 @@ import { Link } from "react-router-dom";
 const BlogFinance = () => {
   const financePosts = [
     {
+      id: "mortgage-planning-guide-uae",
       title: "Mortgage Planning Guide for UAE Residents",
       excerpt: "Complete guide to mortgage planning, home loans, and property financing in the UAE.",
-      date: "December 15, 2024",
+      date: "June 15, 2025",
       readTime: "10 min read",
-      author: "Ahmed Al-Rashid",
+      author: "Vishavkant Sethi",
       category: "Mortgage Planning"
     },
     {
+      id: "home-loan-structuring-optimize",
       title: "Home Loan Structuring: Optimize Your Mortgage",
       excerpt: "Advanced strategies for structuring your home loan to minimize costs and maximize benefits.",
-      date: "December 12, 2024",
+      date: "May 28, 2025",
       readTime: "8 min read",
-      author: "Raj Patel",
+      author: "Vishavkant Sethi",
       category: "Home Loans"
     },
     {
+      id: "investment-opportunities-uae-india",
       title: "Investment Opportunities in UAE vs Indian Equity Markets",
       excerpt: "Comprehensive comparison of investment landscapes in UAE and India, helping you make informed decisions.",
-      date: "December 8, 2024",
+      date: "May 15, 2025",
       readTime: "9 min read",
-      author: "Priya Sharma",
+      author: "Vishavkant Sethi",
       category: "Investment Guide"
     },
     {
+      id: "building-wealth-uae-expats",
       title: "Building Wealth in UAE: A Complete Guide for Expats",
       excerpt: "Strategic wealth building approaches tailored for expatriates living and working in the UAE.",
-      date: "December 3, 2024",
+      date: "April 22, 2025",
       readTime: "11 min read",
-      author: "Amina Hassan",
+      author: "Vishavkant Sethi",
       category: "Wealth Building"
     },
     {
+      id: "retirement-planning-uae-tax-free",
       title: "Retirement Planning in UAE: Tax-Free Benefits and Strategies",
       excerpt: "How to leverage UAE's tax-free environment for optimal retirement planning and savings.",
-      date: "November 25, 2024",
+      date: "March 18, 2025",
       readTime: "8 min read",
-      author: "John Miller",
+      author: "Vishavkant Sethi",
       category: "Retirement Planning"
     },
     {
+      id: "personal-insurance-guide-uae",
       title: "Personal Insurance Guide for UAE Residents",
       excerpt: "Essential insurance coverage every UAE resident should consider for comprehensive financial protection.",
-      date: "November 18, 2024",
+      date: "February 25, 2025",
       readTime: "6 min read",
-      author: "Fatima Al-Zahra",
+      author: "Vishavkant Sethi",
       category: "Insurance"
     }
   ];
@@ -110,10 +116,12 @@ const BlogFinance = () => {
                   </span>
                   <span>{post.readTime}</span>
                 </div>
-                <Button className="w-full bg-gradient-to-r from-green-600 to-green-700 group-hover:shadow-md transition-all">
-                  Read Article
-                  <ExternalLink className="ml-2 w-4 h-4" />
-                </Button>
+                <Link to={`/blog/finance/${post.id}`}>
+                  <Button className="w-full bg-gradient-to-r from-green-600 to-green-700 group-hover:shadow-md transition-all">
+                    Read Article
+                    <ExternalLink className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
