@@ -4,8 +4,9 @@ import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, BarChart, Calculator, Target, CheckCircle, ArrowRight, DollarSign, PieChart, LineChart } from "lucide-react";
+import { TrendingUp, BarChart, Calculator, Target, CheckCircle, ArrowRight, DollarSign, PieChart, LineChart, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const FinancialModeling = () => {
   const [selectedService, setSelectedService] = useState<string>("");
@@ -19,53 +20,64 @@ const FinancialModeling = () => {
   const modelTypes = [
     {
       title: "3-Statement Financial Model",
-      description: "Comprehensive model linking Income Statement, Balance Sheet, and Cash Flow Statement for complete financial analysis.",
-      useCases: ["Business valuation", "Investment analysis", "Credit assessment", "Strategic planning"],
+      description: "Comprehensive model linking Income Statement, Balance Sheet, and Cash Flow Statement for complete financial analysis and business decision-making.",
+      useCases: ["Business valuation and assessment", "Investment analysis and planning", "Credit assessment and lending", "Strategic planning and forecasting"],
       icon: BarChart,
       color: "bg-green-100 text-green-600"
     },
     {
       title: "DCF Valuation Model",
-      description: "Discounted Cash Flow models for accurate business valuation and investment decision-making.",
-      useCases: ["Company valuation", "M&A analysis", "Investment returns", "Fair value assessment"],
+      description: "Discounted Cash Flow models for accurate business valuation and investment decision-making with detailed projections and scenario analysis.",
+      useCases: ["Company valuation and worth assessment", "M&A analysis and due diligence", "Investment returns calculation", "Fair value assessment and pricing"],
       icon: TrendingUp,
       color: "bg-blue-100 text-blue-600"
     },
     {
       title: "Budget & Forecast Model",
-      description: "Dynamic budgeting and forecasting models for operational planning and performance tracking.",
-      useCases: ["Annual budgeting", "Quarterly forecasts", "Scenario planning", "Variance analysis"],
+      description: "Dynamic budgeting and forecasting models for operational planning and performance tracking with real-time updates and variance analysis.",
+      useCases: ["Annual budgeting and planning", "Quarterly forecasts and updates", "Scenario planning and what-if analysis", "Variance analysis and performance tracking"],
       icon: Calculator,
       color: "bg-purple-100 text-purple-600"
     },
     {
       title: "Scenario Analysis Model",
-      description: "Multi-scenario models for risk assessment and strategic decision-making under uncertainty.",
-      useCases: ["Risk assessment", "Sensitivity analysis", "What-if scenarios", "Monte Carlo simulation"],
+      description: "Multi-scenario models for risk assessment and strategic decision-making under uncertainty with Monte Carlo simulations and sensitivity analysis.",
+      useCases: ["Risk assessment and management", "Sensitivity analysis and testing", "What-if scenarios and planning", "Monte Carlo simulation and modeling"],
       icon: Target,
       color: "bg-orange-100 text-orange-600"
     }
   ];
 
   const services = [
-    "Financial statement modeling and integration",
-    "Cash flow forecasting and working capital analysis", 
-    "Investment appraisal and ROI calculations",
-    "Sensitivity and scenario analysis",
-    "Monte Carlo simulations for risk modeling",
-    "Management reporting dashboards"
+    "Financial statement modeling and integration with live data feeds",
+    "Cash flow forecasting and working capital analysis with trend predictions", 
+    "Investment appraisal and ROI calculations with risk assessments",
+    "Sensitivity and scenario analysis with detailed reporting",
+    "Monte Carlo simulations for comprehensive risk modeling",
+    "Management reporting dashboards with real-time KPI tracking"
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation userType="business" />
       
+      <div className="bg-gradient-to-r from-green-900 to-green-800 text-white py-4 px-4">
+        <div className="max-w-6xl mx-auto flex items-center gap-4">
+          <Link to="/business">
+            <Button variant="ghost" className="text-white hover:bg-white/10">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+      </div>
+      
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-green-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <TrendingUp className="w-16 h-16 mx-auto mb-6 text-green-300" />
           <h1 className="text-5xl font-bold mb-6">Financial Modeling Services</h1>
           <p className="text-xl text-green-100 mb-8">
-            Advanced financial models for forecasting, valuation, budgeting, and strategic decision-making tailored for UAE businesses.
+            Advanced financial models for forecasting, valuation, budgeting, and strategic decision-making tailored for UAE businesses with comprehensive analysis.
           </p>
           <Button 
             size="lg" 
@@ -83,7 +95,7 @@ const FinancialModeling = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Types of Financial Models We Build</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From simple budgeting tools to complex valuation models, we create bespoke financial models that drive informed business decisions.
+              From simple budgeting tools to complex valuation models, we create bespoke financial models that drive informed business decisions with precision and clarity.
             </p>
           </div>
 
@@ -112,7 +124,7 @@ const FinancialModeling = () => {
                   className="w-full bg-green-600 hover:bg-green-700"
                   onClick={() => handleBuildModel(model.title)}
                 >
-                  Get This Model
+                  Build This Model
                 </Button>
               </div>
             ))}
@@ -144,23 +156,23 @@ const FinancialModeling = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white rounded-xl p-6 text-center shadow-md">
                   <PieChart className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                  <h4 className="font-semibold text-gray-900">Analytics</h4>
-                  <p className="text-sm text-gray-600">Advanced data analysis</p>
+                  <h4 className="font-semibold text-gray-900">Advanced Analytics</h4>
+                  <p className="text-sm text-gray-600">Deep data analysis and insights</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 text-center shadow-md">
                   <LineChart className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                  <h4 className="font-semibold text-gray-900">Forecasting</h4>
-                  <p className="text-sm text-gray-600">Predictive modeling</p>
+                  <h4 className="font-semibold text-gray-900">Predictive Forecasting</h4>
+                  <p className="text-sm text-gray-600">Future trend modeling</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 text-center shadow-md">
                   <DollarSign className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                  <h4 className="font-semibold text-gray-900">Valuation</h4>
-                  <p className="text-sm text-gray-600">Business worth assessment</p>
+                  <h4 className="font-semibold text-gray-900">Business Valuation</h4>
+                  <p className="text-sm text-gray-600">Accurate worth assessment</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 text-center shadow-md">
                   <Target className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                  <h4 className="font-semibold text-gray-900">Strategy</h4>
-                  <p className="text-sm text-gray-600">Decision support</p>
+                  <h4 className="font-semibold text-gray-900">Strategic Planning</h4>
+                  <p className="text-sm text-gray-600">Decision support systems</p>
                 </div>
               </div>
             </div>

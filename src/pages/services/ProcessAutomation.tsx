@@ -4,8 +4,9 @@ import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { Lightbulb, Workflow, Zap, Settings, CheckCircle, ArrowRight, Cpu, Database, Globe } from "lucide-react";
+import { Lightbulb, Workflow, Zap, Settings, CheckCircle, ArrowRight, Cpu, Database, Globe, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProcessAutomation = () => {
   const [selectedService, setSelectedService] = useState<string>("");
@@ -19,48 +20,48 @@ const ProcessAutomation = () => {
   const automationSolutions = [
     {
       title: "Workflow Design & Optimization",
-      description: "Streamline your business processes by designing efficient workflows that eliminate bottlenecks and reduce manual intervention.",
+      description: "Streamline your business processes by designing efficient workflows that eliminate bottlenecks and reduce manual intervention with comprehensive analysis.",
       details: [
-        "Process mapping and documentation",
-        "Bottleneck identification and resolution",
-        "Standard Operating Procedures (SOPs)",
-        "Performance metrics and KPIs setup"
+        "Comprehensive process mapping and documentation",
+        "Bottleneck identification and strategic resolution",
+        "Standard Operating Procedures (SOPs) development",
+        "Performance metrics and KPIs setup and monitoring"
       ],
       icon: Workflow,
       color: "bg-purple-100 text-purple-600"
     },
     {
       title: "Custom Software Development",
-      description: "Bespoke software solutions tailored to your specific business needs, from web applications to mobile apps and desktop software.",
+      description: "Bespoke software solutions tailored to your specific business needs, from web applications to mobile apps and desktop software with full integration.",
       details: [
-        "Web application development",
-        "Mobile app development (iOS & Android)",
-        "Desktop application solutions",
-        "API development and integrations"
+        "Web application development and deployment",
+        "Mobile app development (iOS & Android platforms)",
+        "Desktop application solutions and maintenance",
+        "API development and system integrations"
       ],
       icon: Cpu,
       color: "bg-blue-100 text-blue-600"
     },
     {
       title: "Data Integration & Migration",
-      description: "Seamlessly connect disparate systems and migrate data across platforms to create a unified business ecosystem.",
+      description: "Seamlessly connect disparate systems and migrate data across platforms to create a unified business ecosystem with real-time synchronization.",
       details: [
-        "System integration and API connections",
-        "Data migration and transformation",
-        "Real-time data synchronization",
-        "Legacy system modernization"
+        "System integration and API connections setup",
+        "Data migration and transformation services",
+        "Real-time data synchronization implementation",
+        "Legacy system modernization and upgrades"
       ],
       icon: Database,
       color: "bg-green-100 text-green-600"
     },
     {
       title: "Business Process Re-engineering",
-      description: "Completely redesign your business processes to achieve dramatic improvements in performance, cost, quality, and speed.",
+      description: "Completely redesign your business processes to achieve dramatic improvements in performance, cost, quality, and speed with strategic implementation.",
       details: [
-        "End-to-end process analysis",
-        "Process redesign and optimization",
-        "Change management support",
-        "Training and implementation"
+        "End-to-end process analysis and evaluation",
+        "Process redesign and optimization strategies",
+        "Change management support and guidance",
+        "Training and implementation with ongoing support"
       ],
       icon: Settings,
       color: "bg-orange-100 text-orange-600"
@@ -68,24 +69,35 @@ const ProcessAutomation = () => {
   ];
 
   const automationServices = [
-    "Workflow automation and process optimization",
-    "Custom software development and integration",
-    "Data migration and system synchronization",
-    "Business process re-engineering",
-    "Digital transformation strategy",
-    "Change management and training"
+    "Workflow automation and comprehensive process optimization",
+    "Custom software development and seamless system integration",
+    "Data migration and real-time system synchronization",
+    "Business process re-engineering and strategic optimization",
+    "Digital transformation strategy and implementation roadmap",
+    "Change management and comprehensive training programs"
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation userType="business" />
       
+      <div className="bg-gradient-to-r from-purple-900 to-purple-800 text-white py-4 px-4">
+        <div className="max-w-6xl mx-auto flex items-center gap-4">
+          <Link to="/business">
+            <Button variant="ghost" className="text-white hover:bg-white/10">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+      </div>
+      
       <section className="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <Lightbulb className="w-16 h-16 mx-auto mb-6 text-purple-300" />
           <h1 className="text-5xl font-bold mb-6">Process Automation Solutions</h1>
           <p className="text-xl text-purple-100 mb-8">
-            Transform your business operations with intelligent automation solutions that boost productivity and reduce costs.
+            Transform your business operations with intelligent automation solutions that boost productivity and reduce costs through strategic implementation.
           </p>
           <Button 
             size="lg" 
@@ -103,7 +115,7 @@ const ProcessAutomation = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Automation Solutions</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From simple workflow automation to complex system integrations, we help businesses achieve operational excellence.
+              From simple workflow automation to complex system integrations, we help businesses achieve operational excellence through strategic automation.
             </p>
           </div>
 
@@ -143,7 +155,7 @@ const ProcessAutomation = () => {
               <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Transform Your Operations</h3>
                 <p className="text-lg text-gray-600 mb-8">
-                  Streamline your business processes with cutting-edge automation solutions that boost productivity and eliminate manual errors.
+                  Streamline your business processes with cutting-edge automation solutions that boost productivity and eliminate manual errors through strategic implementation.
                 </p>
                 <ul className="space-y-4">
                   {automationServices.map((service, index) => (

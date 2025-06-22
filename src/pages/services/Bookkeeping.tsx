@@ -4,8 +4,9 @@ import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { Calculator, FileText, PieChart, TrendingUp, CheckCircle, ArrowRight, Clock, Shield, Award } from "lucide-react";
+import { Calculator, FileText, PieChart, TrendingUp, CheckCircle, ArrowRight, Clock, Shield, Award, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Bookkeeping = () => {
   const [selectedService, setSelectedService] = useState<string>("");
@@ -19,57 +20,64 @@ const Bookkeeping = () => {
   const bookkeepingServices = [
     {
       title: "Monthly Bookkeeping",
-      description: "Complete monthly accounting services including transaction recording, reconciliation, and financial statements.",
-      features: ["Daily transaction recording", "Bank reconciliation", "Monthly financial statements", "VAT compliance"],
+      description: "Complete monthly accounting services including transaction recording, reconciliation, and financial statements with comprehensive analysis and reporting.",
+      features: ["Daily transaction recording and categorization", "Monthly bank reconciliation and analysis", "Comprehensive monthly financial statements", "VAT compliance and submission support"],
       icon: Calculator,
-      color: "bg-blue-100 text-blue-600",
-      price: "Starting from AED 1,500/month"
+      color: "bg-blue-100 text-blue-600"
     },
     {
-      title: "Annual Accounting",
-      description: "Comprehensive year-end accounting services for audit preparation and regulatory compliance.",
-      features: ["Year-end adjustments", "Audit preparation", "Tax return filing", "Regulatory compliance"],
+      title: "Monthly Bookkeeping",
+      description: "Comprehensive monthly accounting services for complete financial management and regulatory compliance with detailed reporting and analysis.",
+      features: ["Monthly financial statement preparation", "Tax compliance and preparation support", "Regulatory compliance management", "Financial analysis and reporting"],
       icon: FileText,
-      color: "bg-green-100 text-green-600",
-      price: "Starting from AED 5,000/year"
+      color: "bg-green-100 text-green-600"
     },
     {
       title: "Management Reporting",
-      description: "Detailed management reports and financial analysis to support business decision-making.",
-      features: ["Custom financial reports", "KPI dashboards", "Budgeting support", "Cash flow analysis"],
+      description: "Detailed management reports and financial analysis to support business decision-making with customized dashboards and KPI tracking.",
+      features: ["Custom financial reports and analysis", "Interactive KPI dashboards", "Budgeting support and variance analysis", "Cash flow analysis and forecasting"],
       icon: PieChart,
-      color: "bg-purple-100 text-purple-600",
-      price: "Starting from AED 2,000/month"
+      color: "bg-purple-100 text-purple-600"
     },
     {
       title: "Payroll Processing",
-      description: "Complete payroll management including salary processing, WPS compliance, and employee benefits.",
-      features: ["Monthly payroll processing", "WPS compliance", "Leave management", "End of service calculations"],
+      description: "Complete payroll management including salary processing, WPS compliance, and employee benefits administration with full regulatory compliance.",
+      features: ["Monthly payroll processing and management", "WPS compliance and submission", "Leave management and tracking", "End of service benefit calculations"],
       icon: TrendingUp,
-      color: "bg-orange-100 text-orange-600",
-      price: "Starting from AED 50/employee"
+      color: "bg-orange-100 text-orange-600"
     }
   ];
 
   const whyChooseUs = [
-    "Qualified chartered accountants with UAE experience",
-    "Cloud-based accounting systems for real-time access",
-    "VAT registration and compliance support",
-    "Audit preparation and liaison with auditors",
-    "Management reporting and business insights",
-    "Dedicated account manager for personalized service"
+    "Qualified chartered accountants with extensive UAE experience and expertise",
+    "Cloud-based accounting systems for real-time access and collaboration",
+    "VAT registration and comprehensive compliance support services",
+    "Audit preparation and professional liaison with external auditors",
+    "Detailed management reporting and strategic business insights",
+    "Dedicated account manager for personalized service and support"
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation userType="business" />
       
+      <div className="bg-gradient-to-r from-indigo-900 to-indigo-800 text-white py-4 px-4">
+        <div className="max-w-6xl mx-auto flex items-center gap-4">
+          <Link to="/business">
+            <Button variant="ghost" className="text-white hover:bg-white/10">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+      </div>
+      
       <section className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <Calculator className="w-16 h-16 mx-auto mb-6 text-indigo-300" />
           <h1 className="text-5xl font-bold mb-6">Accounting & Bookkeeping Services</h1>
           <p className="text-xl text-indigo-100 mb-8">
-            Professional accounting and bookkeeping services to keep your business compliant and financially healthy.
+            Professional accounting and bookkeeping services to keep your business compliant and financially healthy with expert guidance and support.
           </p>
           <Button 
             size="lg" 
@@ -87,7 +95,7 @@ const Bookkeeping = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Accounting Services</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From basic bookkeeping to comprehensive financial management, we provide all the accounting services your business needs.
+              From basic bookkeeping to comprehensive financial management, we provide all the accounting services your business needs with professional expertise.
             </p>
           </div>
 
@@ -99,12 +107,6 @@ const Bookkeeping = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
-                
-                <div className="mb-4">
-                  <div className="bg-indigo-50 rounded-lg p-3 mb-4">
-                    <span className="text-indigo-800 font-semibold">{service.price}</span>
-                  </div>
-                </div>
                 
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
@@ -122,7 +124,7 @@ const Bookkeeping = () => {
                   className="w-full bg-indigo-600 hover:bg-indigo-700"
                   onClick={() => handleGetStarted(service.title)}
                 >
-                  Get Quote
+                  Get Consultation
                 </Button>
               </div>
             ))}
@@ -155,22 +157,22 @@ const Bookkeeping = () => {
                 <div className="bg-white rounded-xl p-6 text-center shadow-md">
                   <Clock className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
                   <h4 className="font-semibold text-gray-900">Timely Service</h4>
-                  <p className="text-sm text-gray-600">On-time delivery always</p>
+                  <p className="text-sm text-gray-600">On-time delivery guaranteed</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 text-center shadow-md">
                   <Shield className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
                   <h4 className="font-semibold text-gray-900">Data Security</h4>
-                  <p className="text-sm text-gray-600">Complete confidentiality</p>
+                  <p className="text-sm text-gray-600">Complete confidentiality assured</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 text-center shadow-md">
                   <Award className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
                   <h4 className="font-semibold text-gray-900">Qualified Team</h4>
-                  <p className="text-sm text-gray-600">Certified professionals</p>
+                  <p className="text-sm text-gray-600">Certified professionals only</p>
                 </div>
                 <div className="bg-white rounded-xl p-6 text-center shadow-md">
                   <TrendingUp className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
                   <h4 className="font-semibold text-gray-900">Growth Support</h4>
-                  <p className="text-sm text-gray-600">Scalable solutions</p>
+                  <p className="text-sm text-gray-600">Scalable business solutions</p>
                 </div>
               </div>
             </div>

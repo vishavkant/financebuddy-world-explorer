@@ -1,65 +1,99 @@
 
-import { Shield, TrendingUp, Lightbulb, BarChart, Building, Calculator, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Shield, BarChart3, Zap, TrendingDown, Building2, Calculator, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 const BusinessServiceCards = () => {
-  const services = [
+  const businessServices = [
     {
-      icon: Shield,
       title: "Business Insurance",
-      description: "Comprehensive insurance solutions to protect your business assets and operations",
-      features: ["General Liability", "Professional Indemnity", "Medical Insurance", "Property Insurance"],
+      description: "Comprehensive insurance solutions for UAE businesses",
+      icon: Shield,
+      features: [
+        "General Liability Insurance",
+        "Professional Indemnity Coverage",
+        "Medical Insurance for Employees",
+        "Property & Asset Protection"
+      ],
       color: "from-blue-600 to-blue-700",
       link: "/services/business-insurance"
     },
     {
-      icon: TrendingUp,
       title: "Financial Modeling",
-      description: "Advanced financial models for forecasting, budgeting, and strategic decision-making",
-      features: ["Scenario Analysis", "Budgeting & Forecasting", "Investment Analysis", "Valuation Services"],
+      description: "Advanced financial models for strategic decision-making",
+      icon: BarChart3,
+      features: [
+        "3-Statement Financial Models",
+        "DCF Valuation Models",
+        "Budget & Forecast Models",
+        "Scenario Analysis Models"
+      ],
       color: "from-green-600 to-green-700",
       link: "/services/financial-modeling"
     },
     {
-      icon: Lightbulb,
       title: "Process Automation",
-      description: "Automate repetitive tasks to improve efficiency and reduce operational costs",
-      features: ["Workflow Automation", "Custom Software Solutions", "Data Integration", "Process Re-engineering"],
+      description: "Streamline operations with intelligent automation",
+      icon: Zap,
+      features: [
+        "Workflow Design & Optimization",
+        "Custom Software Development",
+        "Data Integration & Migration",
+        "Business Process Re-engineering"
+      ],
       color: "from-purple-600 to-purple-700",
       link: "/services/process-automation"
     },
     {
-      icon: BarChart,
       title: "Cost Optimization",
-      description: "Identify and implement strategies to reduce costs and improve profitability",
-      features: ["Expense Reduction", "Supply Chain Optimization", "POS Commission Savings", "Technology Cost Management"],
+      description: "Strategic cost reduction and profitability improvement",
+      icon: TrendingDown,
+      features: [
+        "Expense Analysis & Reduction",
+        "Supply Chain Optimization",
+        "POS Credit Card Commission Savings",
+        "Technology Cost Management"
+      ],
       color: "from-red-600 to-red-700",
       link: "/services/cost-optimization"
     },
     {
-      icon: Building,
-      title: "Company Setup in UAE",
-      description: "Expert guidance for establishing your business in the UAE with complete legal compliance",
-      features: ["Mainland Company Formation", "Free Zone Setup", "Offshore Company Formation", "Branch Office Setup"],
+      title: "Company Setup",
+      description: "Complete business formation services in UAE",
+      icon: Building2,
+      features: [
+        "Mainland Company Formation",
+        "Free Zone Company Setup",
+        "Offshore Company Formation",
+        "Branch Office Setup"
+      ],
       color: "from-emerald-600 to-emerald-700",
       link: "/services/company-setup"
     },
     {
-      icon: Calculator,
       title: "Accounting & Bookkeeping",
-      description: "Professional accounting and bookkeeping services to keep your business compliant",
-      features: ["Monthly Bookkeeping", "Management Reporting", "Payroll Processing", "VAT Compliance"],
+      description: "Professional accounting services for compliance",
+      icon: Calculator,
+      features: [
+        "Monthly Bookkeeping Services",
+        "Management Reporting",
+        "Payroll Processing",
+        "VAT Compliance Support"
+      ],
       color: "from-indigo-600 to-indigo-700",
       link: "/services/bookkeeping"
     },
     {
-      icon: ShoppingCart,
       title: "E-Commerce Setup",
-      description: "Launch your online business on major UAE marketplaces like Amazon and Noon",
-      features: ["Amazon Setup", "Noon Integration", "Multi-Marketplace Management", "Digital Marketing"],
+      description: "Marketplace setup and online business solutions",
+      icon: ShoppingCart,
+      features: [
+        "Amazon Marketplace Setup",
+        "Noon Platform Integration",
+        "Multi-Marketplace Management",
+        "E-Commerce Strategy & Optimization"
+      ],
       color: "from-cyan-600 to-cyan-700",
       link: "/services/ecommerce-setup"
     }
@@ -70,38 +104,38 @@ const BusinessServiceCards = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            Empowering Your Business Growth
+    <section id="services" className="py-20 px-4 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Business Growth Solutions
           </h2>
-          <p className="text-gray-600 mt-4">
-            Explore our comprehensive suite of business solutions designed to
-            drive efficiency, reduce costs, and maximize profitability.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive services to establish, optimize, and scale your business in the UAE
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden bg-white">
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {businessServices.map((service, index) => (
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden">
               <div className={`h-32 bg-gradient-to-br ${service.color} relative flex items-center justify-center`}>
                 <service.icon className="w-12 h-12 text-white" />
               </div>
               
               <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-bold text-gray-900">
+                <CardTitle className="text-2xl font-bold text-gray-900">
                   {service.title}
                 </CardTitle>
-                <CardDescription className="text-gray-600 text-sm">
+                <CardDescription className="text-gray-600 text-base">
                   {service.description}
                 </CardDescription>
               </CardHeader>
 
               <CardContent className="space-y-4">
                 <ul className="space-y-2">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
@@ -116,6 +150,12 @@ const BusinessServiceCards = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button className="bg-gradient-to-r from-blue-600 to-blue-700">
+            Schedule Business Consultation
+          </Button>
         </div>
       </div>
     </section>

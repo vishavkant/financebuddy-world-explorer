@@ -4,8 +4,9 @@ import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { Home, Calculator, TrendingUp, Shield, CheckCircle, ArrowRight, MapPin, DollarSign, Clock } from "lucide-react";
+import { Home, Calculator, TrendingUp, Shield, CheckCircle, ArrowRight, MapPin, DollarSign, Clock, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const MortgageLoans = () => {
   const [selectedService, setSelectedService] = useState<string>("");
@@ -19,64 +20,71 @@ const MortgageLoans = () => {
   const mortgageTypes = [
     {
       title: "Home Purchase Mortgage",
-      description: "Finance your dream home with competitive rates and flexible terms designed for UAE residents.",
-      features: ["Up to 80% financing for UAE nationals", "Up to 75% financing for expats", "Competitive interest rates", "Flexible repayment terms"],
+      description: "Finance your dream home with competitive rates and flexible terms designed for UAE residents with comprehensive support and guidance.",
+      features: ["Special Financing Limits for UAE Nationals", "Up to 80% financing for expats", "Competitive interest rates available", "Flexible repayment terms offered"],
       icon: Home,
-      color: "bg-green-100 text-green-600",
-      rate: "Starting from 2.99%"
+      color: "bg-green-100 text-green-600"
     },
     {
       title: "Home Refinancing",
-      description: "Refinance your existing mortgage to get better rates, lower payments, or access equity.",
-      features: ["Lower interest rates", "Reduced monthly payments", "Cash-out refinancing", "Debt consolidation options"],
+      description: "Refinance your existing mortgage to get better rates, lower payments, or access equity with expert guidance and support.",
+      features: ["Lower interest rates available", "Reduced monthly payment options", "Cash-out refinancing solutions", "Debt consolidation opportunities"],
       icon: TrendingUp,
-      color: "bg-blue-100 text-blue-600",
-      rate: "Rates from 2.75%"
+      color: "bg-blue-100 text-blue-600"
     },
     {
       title: "Investment Property Loan",
-      description: "Finance your investment property with specialized loan products for property investors.",
-      features: ["Up to 60% financing", "Rental income consideration", "Portfolio lending options", "Commercial property financing"],
+      description: "Finance your investment property with specialized loan products for property investors with comprehensive analysis and support.",
+      features: ["Investment property financing available", "Rental income consideration included", "Portfolio lending options available", "Commercial property financing solutions"],
       icon: Calculator,
-      color: "bg-purple-100 text-purple-600",
-      rate: "Starting from 3.25%"
+      color: "bg-purple-100 text-purple-600"
     },
     {
       title: "Construction Mortgage",
-      description: "Build your custom home with our construction-to-permanent mortgage solutions.",
-      features: ["Land acquisition financing", "Construction phase funding", "Permanent mortgage conversion", "Flexible draw schedule"],
+      description: "Build your custom home with our construction-to-permanent mortgage solutions with comprehensive support throughout the process.",
+      features: ["Land acquisition financing available", "Construction phase funding provided", "Permanent mortgage conversion included", "Flexible draw schedule options"],
       icon: Shield,
-      color: "bg-orange-100 text-orange-600", 
-      rate: "Starting from 3.15%"
+      color: "bg-orange-100 text-orange-600"
     }
   ];
 
   const benefits = [
     "Expert guidance through UAE mortgage process with 10+ years experience",
     "Access to best rates from 15+ banks and financial institutions",
-    "Pre-approval assistance and complete documentation support",
-    "Property valuation coordination and legal guidance",
-    "Refinancing and restructuring options for existing mortgages",
-    "Investment property financing solutions with portfolio management"
+    "Pre-approval assistance and complete documentation support services",
+    "Property valuation coordination and comprehensive legal guidance",
+    "Refinancing and restructuring options for existing mortgage holders",
+    "Investment property financing solutions with portfolio management support"
   ];
 
   const process = [
-    { step: 1, title: "Initial Consultation", desc: "Assess your financial situation, requirements, and eligibility", duration: "30 mins" },
-    { step: 2, title: "Pre-approval", desc: "Get pre-approved with multiple banks for best rates and terms", duration: "2-3 days" },
-    { step: 3, title: "Property Search", desc: "Find suitable properties within your budget with our guidance", duration: "Ongoing" },
-    { step: 4, title: "Final Approval", desc: "Complete documentation and secure your mortgage with best terms", duration: "5-7 days" }
+    { step: 1, title: "Initial Consultation", desc: "Assess your financial situation, requirements, and eligibility with expert guidance" },
+    { step: 2, title: "Pre-approval", desc: "Get pre-approved with multiple banks for best rates and terms available" },
+    { step: 3, title: "Property Search", desc: "Find suitable properties within your budget with our professional guidance" },
+    { step: 4, title: "Final Approval", desc: "Complete documentation and secure your mortgage with the best available terms" }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation userType="personal" />
       
+      <div className="bg-gradient-to-r from-green-900 to-green-800 text-white py-4 px-4">
+        <div className="max-w-6xl mx-auto flex items-center gap-4">
+          <Link to="/personal">
+            <Button variant="ghost" className="text-white hover:bg-white/10">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+      </div>
+      
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-green-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <Home className="w-16 h-16 mx-auto mb-6 text-green-300" />
           <h1 className="text-5xl font-bold mb-6">Mortgage & Home Loans</h1>
           <p className="text-xl text-green-100 mb-8">
-            Your trusted partner for home financing in the UAE. We make homeownership dreams come true with expert guidance and competitive rates.
+            Your trusted partner for home financing in the UAE. We make homeownership dreams come true with expert guidance and competitive solutions.
           </p>
           <Button 
             size="lg" 
@@ -94,7 +102,7 @@ const MortgageLoans = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mortgage Solutions</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From first-time homebuyers to seasoned investors, we offer comprehensive mortgage solutions tailored to your needs.
+              From first-time homebuyers to seasoned investors, we offer comprehensive mortgage solutions tailored to your needs with expert guidance.
             </p>
           </div>
 
@@ -106,12 +114,6 @@ const MortgageLoans = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{mortgage.title}</h3>
                 <p className="text-gray-600 mb-6">{mortgage.description}</p>
-                
-                <div className="mb-4">
-                  <div className="bg-green-50 rounded-lg p-3 mb-4">
-                    <span className="text-green-800 font-semibold">{mortgage.rate}</span>
-                  </div>
-                </div>
                 
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
@@ -141,7 +143,7 @@ const MortgageLoans = () => {
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Our Mortgage Services?</h3>
                 <p className="text-lg text-gray-600 mb-8">
                   With years of experience in UAE's mortgage market, we provide comprehensive home loan solutions 
-                  tailored to your unique financial situation and goals.
+                  tailored to your unique financial situation and long-term goals.
                 </p>
                 <ul className="space-y-4">
                   {benefits.map((benefit, index) => (
@@ -171,10 +173,7 @@ const MortgageLoans = () => {
                         {item.step}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                          <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded-full">{item.duration}</span>
-                        </div>
+                        <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
                         <p className="text-gray-600 text-sm">{item.desc}</p>
                       </div>
                     </div>
@@ -187,8 +186,8 @@ const MortgageLoans = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white rounded-xl p-6 text-center shadow-lg">
               <DollarSign className="w-12 h-12 text-green-600 mx-auto mb-4" />
-              <h4 className="font-bold text-gray-900 mb-2">Competitive Rates</h4>
-              <p className="text-gray-600 text-sm">Best mortgage rates from multiple banks</p>
+              <h4 className="font-bold text-gray-900 mb-2">Competitive Solutions</h4>
+              <p className="text-gray-600 text-sm">Best mortgage solutions from multiple banks</p>
             </div>
             <div className="bg-white rounded-xl p-6 text-center shadow-lg">
               <Clock className="w-12 h-12 text-green-600 mx-auto mb-4" />
