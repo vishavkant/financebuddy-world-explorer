@@ -1,11 +1,16 @@
 
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ECommerceSuccessUAE = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navigation userType="business" />
+      
       <div className="bg-gradient-to-br from-blue-50 to-blue-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
           <Link to="/blog/business">
@@ -36,6 +41,10 @@ const ECommerceSuccessUAE = () => {
               <Clock className="w-4 h-4" />
               10 min read
             </span>
+          </div>
+
+          <div className="h-64 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+            <h2 className="text-2xl font-bold text-white">E-commerce Success Guide</h2>
           </div>
         </div>
       </div>
@@ -84,12 +93,31 @@ const ECommerceSuccessUAE = () => {
             <p className="text-blue-700 mb-4">
               Get expert guidance on e-commerce setup and growth strategies in UAE.
             </p>
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Start E-commerce Journey
+            <Link to="/services/ecommerce-setup">
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Start E-commerce Setup
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        <div className="border-t pt-8 mt-12">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">Written by</p>
+              <p className="font-semibold">Vishavkant Sethi</p>
+              <p className="text-sm text-gray-600">Financial Planning Expert</p>
+            </div>
+            <Button variant="outline">
+              <Share2 className="w-4 h-4 mr-2" />
+              Share Article
             </Button>
           </div>
         </div>
       </div>
+
+      <Footer />
+      <FloatingToggle />
     </div>
   );
 };

@@ -1,11 +1,16 @@
 
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HomeLoanStructuring = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navigation userType="personal" />
+      
       <div className="bg-gradient-to-br from-green-50 to-green-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
           <Link to="/blog/finance">
@@ -36,6 +41,10 @@ const HomeLoanStructuring = () => {
               <Clock className="w-4 h-4" />
               8 min read
             </span>
+          </div>
+
+          <div className="h-64 bg-gradient-to-r from-green-600 to-green-700 rounded-lg flex items-center justify-center">
+            <h2 className="text-2xl font-bold text-white">Home Loan Structuring Guide</h2>
           </div>
         </div>
       </div>
@@ -83,12 +92,31 @@ const HomeLoanStructuring = () => {
             <p className="text-green-700 mb-4">
               Our mortgage specialists can help you structure the optimal home loan for your situation.
             </p>
-            <Button className="bg-green-600 hover:bg-green-700">
-              Get Mortgage Consultation
+            <Link to="/services/mortgage-loans">
+              <Button className="bg-green-600 hover:bg-green-700">
+                Get Mortgage Services
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        <div className="border-t pt-8 mt-12">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">Written by</p>
+              <p className="font-semibold">Vishavkant Sethi</p>
+              <p className="text-sm text-gray-600">Financial Planning Expert</p>
+            </div>
+            <Button variant="outline">
+              <Share2 className="w-4 h-4 mr-2" />
+              Share Article
             </Button>
           </div>
         </div>
       </div>
+
+      <Footer />
+      <FloatingToggle />
     </div>
   );
 };
