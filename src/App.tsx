@@ -28,6 +28,22 @@ import CompanySetup from "./pages/services/CompanySetup";
 import Bookkeeping from "./pages/services/Bookkeeping";
 import ECommerceSetup from "./pages/services/ECommerceSetup";
 
+// Blog Article Pages - Finance
+import MortgagePlanningGuide from "./pages/blog/MortgagePlanningGuide";
+import HomeLoanStructuring from "./pages/blog/HomeLoanStructuring";
+import InvestmentOpportunitiesUAEIndia from "./pages/blog/InvestmentOpportunitiesUAEIndia";
+import BuildingWealthUAEExpats from "./pages/blog/BuildingWealthUAEExpats";
+import RetirementPlanningUAE from "./pages/blog/RetirementPlanningUAE";
+import PersonalInsuranceGuide from "./pages/blog/PersonalInsuranceGuide";
+
+// Blog Article Pages - Business
+import CompanySetupGuide from "./pages/blog/CompanySetupGuide";
+import VirtualCFOServices from "./pages/blog/VirtualCFOServices";
+import StreamliningBookkeeping from "./pages/blog/StreamliningBookkeeping";
+import ECommerceSuccessUAE from "./pages/blog/ECommerceSuccessUAE";
+import CostOptimizationStrategies from "./pages/blog/CostOptimizationStrategies";
+import FinancialModeling101 from "./pages/blog/FinancialModeling101";
+
 const queryClient = new QueryClient();
 
 const AppContent = () => {
@@ -56,6 +72,22 @@ const AppContent = () => {
       <Route path="/services/company-setup" element={<CompanySetup />} />
       <Route path="/services/bookkeeping" element={<Bookkeeping />} />
       <Route path="/services/ecommerce-setup" element={<ECommerceSetup />} />
+      
+      {/* Finance Blog Article Routes */}
+      <Route path="/blog/finance/mortgage-planning-guide-uae" element={<MortgagePlanningGuide />} />
+      <Route path="/blog/finance/home-loan-structuring-optimize" element={<HomeLoanStructuring />} />
+      <Route path="/blog/finance/investment-opportunities-uae-india" element={<InvestmentOpportunitiesUAEIndia />} />
+      <Route path="/blog/finance/building-wealth-uae-expats" element={<BuildingWealthUAEExpats />} />
+      <Route path="/blog/finance/retirement-planning-uae-tax-free" element={<RetirementPlanningUAE />} />
+      <Route path="/blog/finance/personal-insurance-guide-uae" element={<PersonalInsuranceGuide />} />
+      
+      {/* Business Blog Article Routes */}
+      <Route path="/blog/business/complete-guide-company-setup-uae" element={<CompanySetupGuide />} />
+      <Route path="/blog/business/virtual-cfo-services-financial-leadership" element={<VirtualCFOServices />} />
+      <Route path="/blog/business/streamlining-bookkeeping-uae-businesses" element={<StreamliningBookkeeping />} />
+      <Route path="/blog/business/ecommerce-success-uae-setup-scale" element={<ECommerceSuccessUAE />} />
+      <Route path="/blog/business/cost-optimization-strategies-growing-businesses" element={<CostOptimizationStrategies />} />
+      <Route path="/blog/business/financial-modeling-101-business-model" element={<FinancialModeling101 />} />
       
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
