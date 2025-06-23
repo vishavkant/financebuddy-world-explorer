@@ -33,23 +33,23 @@ const FloatingToggle = () => {
     <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50">
       <Button
         onClick={toggleUserType}
-        className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 shadow-2xl border-0 rounded-2xl hover:shadow-3xl transition-all duration-300 text-white hover:scale-105 group backdrop-blur-sm"
+        className="flex flex-col items-center gap-3 p-5 bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 shadow-2xl border-0 rounded-2xl hover:shadow-3xl transition-all duration-300 text-white hover:scale-105 group backdrop-blur-sm min-w-[120px]"
         size="lg"
       >
         <div className="flex items-center gap-2 mb-1">
           {currentType === 'personal' ? (
             <>
-              <Building2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              <span className="text-xs font-medium">Switch to</span>
+              <Building2 className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium">Switch to</span>
             </>
           ) : (
             <>
-              <User className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              <span className="text-xs font-medium">Switch to</span>
+              <User className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium">Switch to</span>
             </>
           )}
         </div>
-        <span className="text-sm font-bold bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
+        <span className="text-base font-bold bg-white/25 px-4 py-2 rounded-full backdrop-blur-sm border border-white/20">
           {currentType === 'personal' ? 'Business' : 'Personal'}
         </span>
       </Button>
