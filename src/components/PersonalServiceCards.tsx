@@ -64,6 +64,13 @@ const PersonalServiceCards = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="services" className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -114,12 +121,15 @@ const PersonalServiceCards = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/blog/finance">
+          <Link to="/blog/finance" onClick={scrollToTop}>
             <Button variant="outline" className="mr-4">
               Read Finance Blog
             </Button>
           </Link>
-          <Button className="bg-gradient-to-r from-green-600 to-green-700">
+          <Button 
+            className="bg-gradient-to-r from-green-600 to-green-700"
+            onClick={scrollToContact}
+          >
             Schedule Consultation
           </Button>
         </div>

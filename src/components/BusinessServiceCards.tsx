@@ -103,6 +103,13 @@ const BusinessServiceCards = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="services" className="py-20 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -153,7 +160,10 @@ const BusinessServiceCards = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button className="bg-gradient-to-r from-blue-600 to-blue-700">
+          <Button 
+            className="bg-gradient-to-r from-blue-600 to-blue-700"
+            onClick={scrollToContact}
+          >
             Schedule Business Consultation
           </Button>
         </div>
