@@ -1,9 +1,8 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, Target, PiggyBank, Shield } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, Target, PiggyBank, Shield, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const RetirementPlanningUAE = () => {
@@ -11,12 +10,12 @@ const RetirementPlanningUAE = () => {
     <div className="min-h-screen bg-background">
       <Navigation userType="personal" />
       
-      <div className="bg-gradient-to-br from-green-50 to-green-100 py-12">
+      <div className="bg-gradient-to-br from-purple-50 to-purple-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex gap-4 mb-6">
             <Link to="/">
               <Button variant="outline" size="sm">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <Home className="w-4 h-4 mr-2" />
                 Home
               </Button>
             </Link>
@@ -28,26 +27,18 @@ const RetirementPlanningUAE = () => {
             </Link>
           </div>
           
-          <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
-            Retirement Planning
-          </div>
-          
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Retirement Planning in UAE: Maximizing Tax-Free Benefits for Your Golden Years
+            Retirement Planning in UAE: Tax-Free Benefits and Strategies
           </h1>
           
           <div className="flex items-center gap-6 text-gray-600 mb-8">
-            <span className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              Vishavkant Sethi
-            </span>
             <span className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               March 18, 2025
             </span>
             <span className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              12 min read
+              8 min read
             </span>
           </div>
 
@@ -359,13 +350,7 @@ const RetirementPlanningUAE = () => {
         </div>
 
         <div className="border-t pt-8 mt-12">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Written by</p>
-              <p className="font-semibold">Vishavkant Sethi</p>
-              <p className="text-sm text-gray-600">Financial Planning Expert</p>
-              <p className="text-xs text-gray-500 mt-1">15+ years in UAE retirement planning</p>
-            </div>
+          <div className="flex items-center justify-end">
             <Button variant="outline">
               <Share2 className="w-4 h-4 mr-2" />
               Share Article

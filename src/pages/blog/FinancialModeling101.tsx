@@ -1,9 +1,8 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, BarChart3, Calculator, Target } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, BarChart3, Calculator, Target, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const FinancialModeling101 = () => {
@@ -16,7 +15,7 @@ const FinancialModeling101 = () => {
           <div className="flex gap-4 mb-6">
             <Link to="/">
               <Button variant="outline" size="sm">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <Home className="w-4 h-4 mr-2" />
                 Home
               </Button>
             </Link>
@@ -34,16 +33,12 @@ const FinancialModeling101 = () => {
           
           <div className="flex items-center gap-6 text-gray-600 mb-8">
             <span className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              Vishavkant Sethi
-            </span>
-            <span className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               February 18, 2025
             </span>
             <span className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              15 min read
+              12 min read
             </span>
           </div>
 
@@ -358,13 +353,7 @@ const FinancialModeling101 = () => {
         </div>
 
         <div className="border-t pt-8 mt-12">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Written by</p>
-              <p className="font-semibold">Vishavkant Sethi</p>
-              <p className="text-sm text-gray-600">Financial Modeling Expert</p>
-              <p className="text-xs text-gray-500 mt-1">CFA, 15+ years in financial analysis</p>
-            </div>
+          <div className="flex items-center justify-end">
             <Button variant="outline">
               <Share2 className="w-4 h-4 mr-2" />
               Share Article

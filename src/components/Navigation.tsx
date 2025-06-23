@@ -48,14 +48,24 @@ const Navigation = ({ userType }: NavigationProps) => {
                       </NavigationMenuLink>
                     </div>
                     <div className="grid gap-1">
-                      <div className="flex items-center gap-2 text-sm font-medium">
-                        <Building2 className="w-4 h-4" />
-                        Business Solutions
-                      </div>
-                      <div className="flex items-center gap-2 text-sm font-medium">
-                        <User className="w-4 h-4" />
-                        Personal Finance & Mortgage
-                      </div>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/business"
+                          className="flex items-center gap-2 text-sm font-medium select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <Building2 className="w-4 h-4" />
+                          Business Solutions
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/personal"
+                          className="flex items-center gap-2 text-sm font-medium select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <User className="w-4 h-4" />
+                          Personal Finance & Mortgage
+                        </Link>
+                      </NavigationMenuLink>
                     </div>
                   </div>
                 </NavigationMenuContent>

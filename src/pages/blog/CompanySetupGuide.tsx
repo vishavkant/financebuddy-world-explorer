@@ -1,9 +1,8 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, User, Clock, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CompanySetupGuide = () => {
@@ -13,12 +12,20 @@ const CompanySetupGuide = () => {
       
       <article className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8">
-          <Link to="/blog/business">
-            <Button variant="outline" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Business Blog
-            </Button>
-          </Link>
+          <div className="flex gap-4 mb-6">
+            <Link to="/">
+              <Button variant="outline" size="sm">
+                <Home className="w-4 h-4 mr-2" />
+                Home
+              </Button>
+            </Link>
+            <Link to="/blog/business">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Business Blog
+              </Button>
+            </Link>
+          </div>
           
           <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
             Company Setup
@@ -29,10 +36,6 @@ const CompanySetupGuide = () => {
           </h1>
           
           <div className="flex items-center gap-6 text-gray-600 mb-6">
-            <span className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              Vishavkant Sethi
-            </span>
             <span className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               June 10, 2025
@@ -159,12 +162,7 @@ const CompanySetupGuide = () => {
         </div>
 
         <div className="border-t pt-8 mt-12">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Written by</p>
-              <p className="font-semibold">Vishavkant Sethi</p>
-              <p className="text-sm text-gray-600">Business Setup Expert</p>
-            </div>
+          <div className="flex items-center justify-end">
             <Button variant="outline">
               <Share2 className="w-4 h-4 mr-2" />
               Share Article

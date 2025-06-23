@@ -1,9 +1,8 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, BarChart3, PieChart, AlertTriangle } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, BarChart3, PieChart, AlertTriangle, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const VirtualCFOServices = () => {
@@ -16,7 +15,7 @@ const VirtualCFOServices = () => {
           <div className="flex gap-4 mb-6">
             <Link to="/">
               <Button variant="outline" size="sm">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <Home className="w-4 h-4 mr-2" />
                 Home
               </Button>
             </Link>
@@ -29,21 +28,17 @@ const VirtualCFOServices = () => {
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Virtual CFO Services: When Your Business Needs Strategic Financial Leadership
+            Virtual CFO Services: When Your Business Needs Financial Leadership
           </h1>
           
           <div className="flex items-center gap-6 text-gray-600 mb-8">
-            <span className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              Vishavkant Sethi
-            </span>
             <span className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               May 22, 2025
             </span>
             <span className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              8 min read
+              6 min read
             </span>
           </div>
 
@@ -282,13 +277,7 @@ const VirtualCFOServices = () => {
         </div>
 
         <div className="border-t pt-8 mt-12">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Written by</p>
-              <p className="font-semibold">Vishavkant Sethi</p>
-              <p className="text-sm text-gray-600">Financial Planning Expert & Virtual CFO Specialist</p>
-              <p className="text-xs text-gray-500 mt-1">15+ years experience in UAE financial services</p>
-            </div>
+          <div className="flex items-center justify-end">
             <Button variant="outline">
               <Share2 className="w-4 h-4 mr-2" />
               Share Article
