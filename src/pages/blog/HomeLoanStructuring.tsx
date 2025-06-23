@@ -13,15 +13,19 @@ const HomeLoanStructuring = () => {
       
       <div className="bg-gradient-to-br from-green-50 to-green-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
-          <Link to="/blog/finance">
-            <Button variant="outline" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Finance Blog
-            </Button>
-          </Link>
-          
-          <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
-            Home Loans
+          <div className="flex gap-4 mb-6">
+            <Link to="/">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Home
+              </Button>
+            </Link>
+            <Link to="/blog/finance">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Finance Blog
+              </Button>
+            </Link>
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -326,9 +330,6 @@ const HomeLoanStructuring = () => {
                   Get Mortgage Optimization Services
                 </Button>
               </Link>
-              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                Calculate Your Savings Potential
-              </Button>
             </div>
           </div>
         </div>

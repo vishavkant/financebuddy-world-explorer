@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, User, ArrowRight, Calendar, Clock } from "lucide-react";
+import { Building2, User, ArrowRight, Calendar, Clock, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
@@ -30,6 +30,15 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <div className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
         <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-8">
+            <Link to="/">
+              <Button variant="outline" size="sm">
+                <Home className="w-4 h-4 mr-2" />
+                Back to Home
+              </Button>
+            </Link>
+          </div>
+          
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
               FinanceBuddy <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Blog</span>

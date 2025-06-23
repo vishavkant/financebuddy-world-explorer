@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, BarChart3, Target, Globe } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, BarChart3, Globe, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const InvestmentOpportunitiesUAEIndia = () => {
@@ -13,15 +13,19 @@ const InvestmentOpportunitiesUAEIndia = () => {
       
       <div className="bg-gradient-to-br from-green-50 to-green-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
-          <Link to="/blog/finance">
-            <Button variant="outline" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Finance Blog
-            </Button>
-          </Link>
-          
-          <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
-            Investment Guide
+          <div className="flex gap-4 mb-6">
+            <Link to="/">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Home
+              </Button>
+            </Link>
+            <Link to="/blog/finance">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Finance Blog
+              </Button>
+            </Link>
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -361,7 +365,7 @@ const InvestmentOpportunitiesUAEIndia = () => {
           <div className="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-lg mt-12">
             <h3 className="text-green-800 font-semibold mb-4 text-xl">Start Your Indian Market Investment Journey</h3>
             <p className="text-gray-700 mb-6">
-              India's equity markets offer compelling long-term opportunities for disciplined investors. With strong fundamentals, supportive demographics, and ongoing structural reforms, the country is well-positioned for sustained growth. Let our investment experts help you build a portfolio that capitalizes on India's growth story.
+              India's stock market offers exceptional growth opportunities for long-term investors. With our expert guidance, you can build a diversified portfolio that captures the country's economic transformation while managing risks effectively.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/services/investment-planning">
@@ -369,9 +373,6 @@ const InvestmentOpportunitiesUAEIndia = () => {
                   Get Investment Planning Services
                 </Button>
               </Link>
-              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                Download India Investment Guide
-              </Button>
             </div>
           </div>
         </div>

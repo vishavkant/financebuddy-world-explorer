@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User, Share2, BarChart3, TrendingUp, Calculator, Target } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, BarChart3, Calculator, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const FinancialModeling101 = () => {
@@ -13,15 +13,19 @@ const FinancialModeling101 = () => {
       
       <div className="bg-gradient-to-br from-blue-50 to-blue-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
-          <Link to="/blog/business">
-            <Button variant="outline" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Business Blog
-            </Button>
-          </Link>
-          
-          <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
-            Financial Analysis
+          <div className="flex gap-4 mb-6">
+            <Link to="/">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Home
+              </Button>
+            </Link>
+            <Link to="/blog/business">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Business Blog
+              </Button>
+            </Link>
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -339,19 +343,16 @@ const FinancialModeling101 = () => {
           </div>
 
           <div className="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-lg mt-12">
-            <h3 className="text-blue-800 font-semibold mb-4 text-xl">Ready to Build Your Financial Model?</h3>
+            <h3 className="text-blue-800 font-semibold mb-4 text-xl">Master Financial Modeling for Your Business</h3>
             <p className="text-gray-700 mb-6">
-              Professional financial modeling is both an art and a science. Our expert team has built hundreds of financial models for businesses across industries, from startup pitch decks to complex enterprise valuations. Let us help you create a model that drives your business forward.
+              Professional financial models are crucial for business success, fundraising, and strategic planning. Our modeling experts have created over 300+ financial models for UAE businesses across various industries.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/services/financial-modeling">
                 <Button className="bg-blue-600 hover:bg-blue-700">
-                  Get Professional Financial Modeling
+                  Get Financial Modeling Services
                 </Button>
               </Link>
-              <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-                Download Model Template
-              </Button>
             </div>
           </div>
         </div>

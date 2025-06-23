@@ -13,15 +13,19 @@ const ECommerceSuccessUAE = () => {
       
       <div className="bg-gradient-to-br from-blue-50 to-blue-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
-          <Link to="/blog/business">
-            <Button variant="outline" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Business Blog
-            </Button>
-          </Link>
-          
-          <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
-            E-commerce Strategy
+          <div className="flex gap-4 mb-6">
+            <Link to="/">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Home
+              </Button>
+            </Link>
+            <Link to="/blog/business">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Business Blog
+              </Button>
+            </Link>
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -283,9 +287,6 @@ const ECommerceSuccessUAE = () => {
                   Start Your E-commerce Journey
                 </Button>
               </Link>
-              <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-                Schedule Free Strategy Session
-              </Button>
             </div>
           </div>
         </div>
