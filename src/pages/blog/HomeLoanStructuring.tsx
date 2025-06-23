@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, TrendingUp, Calculator, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HomeLoanStructuring = () => {
@@ -223,10 +223,10 @@ const HomeLoanStructuring = () => {
                   <h5 className="font-medium text-gray-800 mb-2">Prepayment vs. Investment Decision</h5>
                   <div className="space-y-2">
                     <div className="text-sm">
-                      <strong>Prepay if:</strong> Expected investment returns < Loan interest rate
+                      <strong>Prepay if:</strong> Expected investment returns &lt; Loan interest rate
                     </div>
                     <div className="text-sm">
-                      <strong>Invest if:</strong> Expected returns > Loan rate + Risk premium
+                      <strong>Invest if:</strong> Expected returns &gt; Loan rate + Risk premium
                     </div>
                     <div className="text-sm text-gray-600">
                       Consider tax implications and liquidity needs
