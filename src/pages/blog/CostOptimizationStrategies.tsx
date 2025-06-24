@@ -1,9 +1,8 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FloatingToggle from "@/components/FloatingToggle";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, User, Share2, TrendingDown, DollarSign, Target, Lightbulb } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2, TrendingDown, DollarSign, Target, Lightbulb, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CostOptimizationStrategies = () => {
@@ -13,12 +12,20 @@ const CostOptimizationStrategies = () => {
       
       <div className="bg-gradient-to-br from-red-50 to-red-100 py-12">
         <div className="max-w-4xl mx-auto px-4">
-          <Link to="/blog/business">
-            <Button variant="outline" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Business Blog
-            </Button>
-          </Link>
+          <div className="flex gap-4 mb-6">
+            <Link to="/">
+              <Button variant="outline" size="sm">
+                <Home className="w-4 h-4 mr-2" />
+                Home
+              </Button>
+            </Link>
+            <Link to="/blog/business">
+              <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Business Blog
+              </Button>
+            </Link>
+          </div>
           
           <div className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
             Cost Management
@@ -29,10 +36,6 @@ const CostOptimizationStrategies = () => {
           </h1>
           
           <div className="flex items-center gap-6 text-gray-600 mb-8">
-            <span className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              Vishavkant Sethi
-            </span>
             <span className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               March 28, 2025
@@ -226,12 +229,7 @@ const CostOptimizationStrategies = () => {
         </div>
 
         <div className="border-t pt-8 mt-12">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Written by</p>
-              <p className="font-semibold text-lg">Vishavkant Sethi</p>
-              <p className="text-sm text-gray-600">Financial Planning Expert & Business Strategy Consultant</p>
-            </div>
+          <div className="flex items-center justify-end">
             <Button variant="outline">
               <Share2 className="w-4 h-4 mr-2" />
               Share Article
