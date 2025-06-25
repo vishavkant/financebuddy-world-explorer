@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
@@ -133,31 +132,6 @@ const MortgageLoans = () => {
             </p>
           </div>
           <LoanCalculator />
-          
-          {/* SEO Content Section */}
-          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">Why Choose Our Loan Calculator UAE?</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Home Loan Calculator Features</h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Accurate Home Loan EMI Calculator</li>
-                  <li>• Home Loan Interest Calculator with live rates</li>
-                  <li>• Best Home Loan Calculator UAE experience</li>
-                  <li>• Home Loan in UAE comparison tools</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Personal Loan Calculator Benefits</h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Instant Personal Loan EMI Calculator</li>
-                  <li>• Personal Loan Interest Calculator</li>
-                  <li>• Personal Loan Calculator UAE with multiple banks</li>
-                  <li>• Personal Loan in UAE eligibility checker</li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

@@ -16,9 +16,37 @@ const LoanCalculator = () => {
   const [totalInterest, setTotalInterest] = useState<number>(0);
   const [totalAmount, setTotalAmount] = useState<number>(0);
 
+  const formatNumberWithCommas = (value: string) => {
+    // Remove all non-numeric characters except decimal point
+    const numericValue = value.replace(/[^\d.]/g, '');
+    
+    // Split by decimal point
+    const parts = numericValue.split('.');
+    
+    // Format the integer part with commas
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    
+    // Join back with decimal if it exists
+    return parts.join('.');
+  };
+
+  const parseFormattedNumber = (value: string) => {
+    return parseFloat(value.replace(/,/g, ''));
+  };
+
+  const handlePropertyValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatNumberWithCommas(e.target.value);
+    setPropertyValue(formatted);
+  };
+
+  const handleDownPaymentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatNumberWithCommas(e.target.value);
+    setDownPayment(formatted);
+  };
+
   const calculateEMI = () => {
-    const property = parseFloat(propertyValue);
-    const down = parseFloat(downPayment);
+    const property = parseFormattedNumber(propertyValue);
+    const down = parseFormattedNumber(downPayment);
     const rate = parseFloat(interestRate);
     const tenureYears = parseInt(tenure);
 
@@ -74,7 +102,7 @@ const LoanCalculator = () => {
   };
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-AE', {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'AED',
       minimumFractionDigits: 0,
@@ -98,11 +126,11 @@ const LoanCalculator = () => {
             </Label>
             <Input
               id="propertyValue"
-              type="number"
+              type="text"
               placeholder="e.g., 1,000,000"
               value={propertyValue}
-              onChange={(e) => setPropertyValue(e.target.value)}
-              className="text-lg"
+              onChange={handlePropertyValueChange}
+              className="text-lg text-right"
             />
           </div>
 
@@ -112,11 +140,11 @@ const LoanCalculator = () => {
             </Label>
             <Input
               id="downPayment"
-              type="number"
+              type="text"
               placeholder="e.g., 250,000"
               value={downPayment}
-              onChange={(e) => setDownPayment(e.target.value)}
-              className="text-lg"
+              onChange={handleDownPaymentChange}
+              className="text-lg text-right"
             />
           </div>
 
@@ -131,7 +159,7 @@ const LoanCalculator = () => {
               placeholder="e.g., 3.5"
               value={interestRate}
               onChange={(e) => setInterestRate(e.target.value)}
-              className="text-lg"
+              className="text-lg text-right"
             />
           </div>
 
@@ -147,7 +175,7 @@ const LoanCalculator = () => {
               placeholder="e.g., 20"
               value={tenure}
               onChange={(e) => setTenure(e.target.value)}
-              className="text-lg"
+              className="text-lg text-right"
             />
           </div>
 
@@ -206,8 +234,8 @@ const LoanCalculator = () => {
               <div className="bg-blue-50 p-4 rounded-lg">
                 <h4 className="font-semibold text-blue-800 mb-2">Loan Summary</h4>
                 <div className="space-y-1 text-sm text-blue-700">
-                  <p>• Property Value: {formatCurrency(parseFloat(propertyValue))}</p>
-                  <p>• Down Payment: {formatCurrency(parseFloat(downPayment))}</p>
+                  <p>• Property Value: {formatCurrency(parseFormattedNumber(propertyValue))}</p>
+                  <p>• Down Payment: {formatCurrency(parseFormattedNumber(downPayment))}</p>
                   <p>• Loan Amount: {formatCurrency(loanAmount)}</p>
                   <p>• Interest Rate: {interestRate}% per year</p>
                   <p>• Loan Tenure: {tenure} years</p>
