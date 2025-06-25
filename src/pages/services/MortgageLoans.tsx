@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import FloatingToggle from "@/components/FloatingToggle";
+import LoanCalculator from "@/components/LoanCalculator";
 import { Button } from "@/components/ui/button";
 import { Home, Calculator, TrendingUp, Shield, CheckCircle, ArrowRight, MapPin, DollarSign, Clock, ArrowLeft } from "lucide-react";
 import { useState } from "react";
@@ -94,6 +95,19 @@ const MortgageLoans = () => {
             Get Free Consultation
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
+        </div>
+      </section>
+
+      {/* Loan Calculator Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Calculate Your Mortgage</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Use our advanced mortgage calculator to estimate your monthly EMI and plan your home purchase budget effectively.
+            </p>
+          </div>
+          <LoanCalculator />
         </div>
       </section>
 
