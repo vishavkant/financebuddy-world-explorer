@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
@@ -44,30 +45,30 @@ const MortgageLoans = () => {
 
   const mortgageTypes = [
     {
-      title: "Home Loan & Home Loan Calculator UAE",
-      description: "Finance your dream home with our Home Loan Calculator UAE. Calculate Home Loan EMI, compare Home Loan interest rates, and find the best Home Loan in UAE with competitive rates designed for UAE residents.",
-      features: ["Special Home Loan financing limits for UAE Nationals", "Up to 80% Home Loan financing for expats", "Competitive Home Loan interest rates available", "Flexible Home Loan repayment terms offered"],
+      title: "Conventional Home Loans",
+      description: "Traditional financing options with competitive rates and flexible terms for qualified borrowers purchasing primary residences or investment properties.",
+      features: ["Financing limits up to AED 10M for UAE Nationals", "Up to 80% financing for expats", "Competitive interest rates", "Flexible repayment terms"],
       icon: Home,
       color: "bg-green-100 text-green-600"
     },
     {
-      title: "Personal Loan & Personal Loan Calculator UAE",
-      description: "Get instant Personal Loan approval with our Personal Loan Calculator UAE. Calculate Personal Loan EMI, check Personal Loan interest rates, and apply for Personal Loan in UAE with our Personal Loan App.",
-      features: ["Quick Personal Loan approval process", "Personal Loan Calculator for accurate EMI calculation", "Competitive Personal Loan interest rates", "Personal Loan App in UAE for easy applications"],
+      title: "First-Time Buyer Programs",
+      description: "Specialized mortgage solutions designed for first-time homeowners with reduced down payment requirements and additional support services.",
+      features: ["Lower down payment options", "First-time buyer assistance programs", "Educational resources and guidance", "Streamlined approval process"],
       icon: TrendingUp,
       color: "bg-blue-100 text-blue-600"
     },
     {
-      title: "Loan Refinancing & Loan Interest Calculator",
-      description: "Refinance your existing loan with our Loan Interest Calculator. Compare Loan rates, reduce monthly Loan payments, or access equity with our comprehensive Loan Calculator UAE services.",
-      features: ["Lower Loan interest rates available", "Reduced monthly Loan payment options", "Cash-out Loan refinancing solutions", "Debt consolidation Loan opportunities"],
+      title: "Refinancing Solutions",
+      description: "Optimize your existing mortgage with refinancing options to reduce monthly payments, access equity, or consolidate debt.",
+      features: ["Lower interest rates", "Reduced monthly payments", "Cash-out refinancing", "Debt consolidation opportunities"],
       icon: Calculator,
       color: "bg-purple-100 text-purple-600"
     },
     {
-      title: "Investment Property Loan Calculator",
-      description: "Finance your investment property with specialized Loan products. Use our Loan EMI Calculator for investment properties and get the best Loan in UAE for property investors.",
-      features: ["Investment property Loan financing available", "Rental income consideration for Loan approval", "Portfolio Loan lending options available", "Commercial property Loan financing solutions"],
+      title: "Investment Property Loans",
+      description: "Specialized financing for real estate investors looking to expand their portfolio with buy-to-let properties and commercial investments.",
+      features: ["Investment property financing", "Rental income consideration", "Portfolio lending options", "Commercial property solutions"],
       icon: Shield,
       color: "bg-orange-100 text-orange-600"
     }
@@ -107,28 +108,29 @@ const MortgageLoans = () => {
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-green-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <Home className="w-16 h-16 mx-auto mb-6 text-green-300" />
-          <h1 className="text-5xl font-bold mb-6">Loan Calculator UAE | Home Loan & Personal Loan EMI Calculator</h1>
+          <h1 className="text-5xl font-bold mb-6">Mortgage & Home Loans in UAE</h1>
           <p className="text-xl text-green-100 mb-8">
-            Your trusted Loan Calculator UAE for Home Loan, Personal Loan, and mortgage financing. Calculate Loan EMI, compare Loan interest rates, and find the best Loan in UAE with our comprehensive Loan App.
+            Secure your dream home with our comprehensive mortgage solutions. Expert guidance, 
+            competitive rates, and personalized service to make homeownership achievable.
           </p>
           <Button 
             size="lg" 
             className="bg-white text-green-900 hover:bg-green-50"
-            onClick={() => handleGetConsultation("Loan Calculator Consultation")}
+            onClick={() => handleGetConsultation("Mortgage Consultation")}
           >
-            Get Free Loan Consultation
+            Get Free Consultation
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
       </section>
 
-      {/* Loan Calculator Section - Enhanced SEO */}
+      {/* Loan Calculator Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Free Loan Calculator UAE - Home Loan & Personal Loan EMI Calculator</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Loan Calculator UAE - Home Loan & Personal Loan EMI Calculator</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Use our advanced Loan Calculator UAE to calculate Home Loan EMI, Personal Loan interest, and plan your Loan budget effectively. Best Loan EMI Calculator and Loan Interest Calculator in UAE.
+              Use our advanced Loan Calculator UAE to calculate Home Loan EMI, Personal Loan interest, and plan your loan budget effectively.
             </p>
           </div>
           <LoanCalculator />
@@ -138,9 +140,10 @@ const MortgageLoans = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Loan Solutions - Home Loan & Personal Loan in UAE</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mortgage Solutions</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From Home Loan Calculator to Personal Loan App, we offer comprehensive Loan solutions tailored to your needs. Use our Loan EMI Calculator and Loan Interest Calculator for informed decisions.
+              From first-time buyers to seasoned investors, we offer tailored mortgage solutions 
+              to meet your unique needs and financial goals.
             </p>
           </div>
 
@@ -224,8 +227,8 @@ const MortgageLoans = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white rounded-xl p-6 text-center shadow-lg">
               <DollarSign className="w-12 h-12 text-green-600 mx-auto mb-4" />
-              <h4 className="font-bold text-gray-900 mb-2">Competitive Solutions</h4>
-              <p className="text-gray-600 text-sm">Best mortgage solutions from multiple banks</p>
+              <h4 className="font-bold text-gray-900 mb-2">Competitive Rates</h4>
+              <p className="text-gray-600 text-sm">Best mortgage rates from multiple banks</p>
             </div>
             <div className="bg-white rounded-xl p-6 text-center shadow-lg">
               <Clock className="w-12 h-12 text-green-600 mx-auto mb-4" />
