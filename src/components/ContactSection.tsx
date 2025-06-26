@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
+import { supabase } from "../supabaseClient"; // <-- add this import
+
 
 interface ContactSectionProps {
   selectedService?: string;
@@ -18,6 +20,8 @@ const ContactSection = ({ selectedService }: ContactSectionProps) => {
     message: ''
   });
 
+   const [loading, setLoading] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -25,10 +29,22 @@ const ContactSection = ({ selectedService }: ContactSectionProps) => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => { 
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
+    setLoading(true);
+
+        // Insert the data into your leads table (change 'leads' if your table is named differently)
+    const { error } = await supabase
+      .from('leads')
+      .insert([formData]);
+
+    setLoading(false);
+
+    if (error) {
+      alert('There was an error submitting your lead: ' + error.message);
+    } else {
+      alert('Thank you for your message! We will get back to you soon.');
+
     
     setFormData({
       name: '',
@@ -37,6 +53,7 @@ const ContactSection = ({ selectedService }: ContactSectionProps) => {
       service: selectedService || '',
       message: ''
     });
+  };
   };
 
   return (
@@ -111,8 +128,9 @@ const ContactSection = ({ selectedService }: ContactSectionProps) => {
               <Button
                 type="submit"
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-              >
-                Send Message
+                disabled={loading}
+                >
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
