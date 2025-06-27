@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
-import { supabase } from "src/SupabaseClient"; // <-- add this import
+import { supabase } from "../SupabaseClient"; // <-- add this import
 
 
 interface ContactSectionProps {
