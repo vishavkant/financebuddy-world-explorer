@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=/" />
+  </head>
+  <body>
+    <script>
+      // If the browser supports history.replaceState, redirect to root and preserve path with hash
+      var redirectTo = '/' + '#'+ window.location.pathname;
+      window.location.replace(redirectTo);
+    </script>
+    <p>Redirecting...</p>
+  </body>
+</html>
