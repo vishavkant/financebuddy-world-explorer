@@ -23,8 +23,18 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Remove old docs
-        run: rm -rf docs && mkdir docs
+      - name: Backup CNAME if exists
+        run: |
+          if [ -f docs/CNAME ]; then cp docs/CNAME CNAME.bak; fi
+
+      - name: Remove old docs content
+        run: |
+          rm -rf docs/*
+          mkdir -p docs
+
+      - name: Restore CNAME if backup exists
+        run: |
+          if [ -f CNAME.bak ]; then mv CNAME.bak docs/CNAME; fi
 
       - name: Copy build output to docs
         run: cp -r dist/* docs/
