@@ -2,20 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; URL=/" />
+    <title>Redirecting to Home...</title>
     <script>
-      // Handle client-side routing for SPA
-      (function() {
-        var path = window.location.pathname;
-        var search = window.location.search;
-        var hash = window.location.hash;
-        // Redirect to index.html with the full path preserved in hash
-        window.location.replace("/#" + path + search + hash);
-      })();
+      window.location.replace("/");
     </script>
   </head>
   <body>
-    <h1>Redirecting...</h1>
+    <h1>Redirecting to Home...</h1>
   </body>
 </html>
