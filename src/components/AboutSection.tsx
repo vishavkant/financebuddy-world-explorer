@@ -4,8 +4,8 @@ import { CheckCircle, Users, Award, Clock } from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { icon: Users, label: "Happy Clients", value: "500+" },
-    { icon: Award, label: "Years Experience", value: "10+" },
+    { icon: Users, label: "Happy Clients", value: "50+" },
+    { icon: Award, label: "Years Experience", value: "20+" },
     { icon: CheckCircle, label: "Success Rate", value: "98%" },
     { icon: Clock, label: "24/7 Support", value: "Always" }
   ];
